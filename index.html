@@ -665,11 +665,19 @@
     <div class="lg:col-span-7">
       <div class="bg-surface-container-low p-8 lg:p-12 rounded-lg border border-outline-variant/10 relative overflow-hidden">
         <div class="absolute -top-24 -right-24 w-64 h-64 bg-primary/5 blur-[100px] rounded-full"></div>
-        <form class="relative z-10 space-y-10" action="mailto:mihirshelar@gmail.com" method="post" enctype="text/plain">
+        <form class="relative z-10 space-y-10"
+              action="https://formsubmit.co/mihirshelar@gmail.com"
+              method="POST">
+          <!-- Formsubmit config -->
+          <input type="hidden" name="_subject" value="New message from mihirshelar.com"/>
+          <input type="hidden" name="_captcha" value="false"/>
+          <input type="hidden" name="_next" value="https://mihirshelar.com#contact"/>
+          <input type="hidden" name="_template" value="table"/>
+
           <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
             <div class="relative group">
               <label class="block text-[10px] uppercase tracking-widest text-outline mb-2 group-focus-within:text-primary transition-colors">Full Name</label>
-              <input name="name" type="text" placeholder="Jane Doe" class="w-full bg-surface-container-lowest border-none border-b border-outline-variant/30 focus:border-primary focus:ring-0 text-on-surface py-3 px-0 text-sm transition-all placeholder:text-surface-bright"/>
+              <input name="name" type="text" placeholder="Jane Doe" required class="w-full bg-surface-container-lowest border-none border-b border-outline-variant/30 focus:border-primary focus:ring-0 text-on-surface py-3 px-0 text-sm transition-all placeholder:text-surface-bright"/>
               <div class="absolute bottom-0 left-0 w-0 h-[1px] bg-primary group-focus-within:w-full transition-all duration-500"></div>
             </div>
             <div class="relative group">
@@ -679,13 +687,18 @@
             </div>
           </div>
           <div class="relative group">
+            <label class="block text-[10px] uppercase tracking-widest text-outline mb-2 group-focus-within:text-primary transition-colors">Email</label>
+            <input name="email" type="email" placeholder="you@example.com" required class="w-full bg-surface-container-lowest border-none border-b border-outline-variant/30 focus:border-primary focus:ring-0 text-on-surface py-3 px-0 text-sm transition-all placeholder:text-surface-bright"/>
+            <div class="absolute bottom-0 left-0 w-0 h-[1px] bg-primary group-focus-within:w-full transition-all duration-500"></div>
+          </div>
+          <div class="relative group">
             <label class="block text-[10px] uppercase tracking-widest text-outline mb-2 group-focus-within:text-primary transition-colors">Subject</label>
             <input name="subject" type="text" placeholder="Technical Advisory Request" class="w-full bg-surface-container-lowest border-none border-b border-outline-variant/30 focus:border-primary focus:ring-0 text-on-surface py-3 px-0 text-sm transition-all placeholder:text-surface-bright"/>
             <div class="absolute bottom-0 left-0 w-0 h-[1px] bg-primary group-focus-within:w-full transition-all duration-500"></div>
           </div>
           <div class="relative group">
             <label class="block text-[10px] uppercase tracking-widest text-outline mb-2 group-focus-within:text-primary transition-colors">Message</label>
-            <textarea name="message" rows="4" placeholder="Briefly describe your project or proposal..." class="w-full bg-surface-container-lowest border-none border-b border-outline-variant/30 focus:border-primary focus:ring-0 text-on-surface py-3 px-0 text-sm transition-all resize-none placeholder:text-surface-bright"></textarea>
+            <textarea name="message" rows="4" placeholder="Briefly describe your project or proposal..." required class="w-full bg-surface-container-lowest border-none border-b border-outline-variant/30 focus:border-primary focus:ring-0 text-on-surface py-3 px-0 text-sm transition-all resize-none placeholder:text-surface-bright"></textarea>
             <div class="absolute bottom-0 left-0 w-0 h-[1px] bg-primary group-focus-within:w-full transition-all duration-500"></div>
           </div>
           <div class="pt-6 flex flex-col sm:flex-row items-center justify-between gap-6">
