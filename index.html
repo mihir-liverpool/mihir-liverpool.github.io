@@ -1,432 +1,665 @@
-<!DOCTYPE HTML>
+<!DOCTYPE html>
+<html class="dark" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Mihir Shelar | Senior Technical Program Manager</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+  tailwind.config = {
+    darkMode: "class",
+    theme: {
+      extend: {
+        colors: {
+          "on-surface-variant": "#c5c6cc",
+          "background": "#101417",
+          "surface-bright": "#363a3d",
+          "surface-dim": "#101417",
+          "on-secondary-fixed": "#1e1a22",
+          "on-tertiary-fixed-variant": "#454747",
+          "inverse-on-surface": "#2d3134",
+          "on-tertiary-container": "#e1e1e1",
+          "error-container": "#93000a",
+          "on-primary-container": "#d9e1ef",
+          "on-tertiary": "#2f3131",
+          "secondary-fixed": "#e9dfeb",
+          "on-primary-fixed-variant": "#3f4753",
+          "primary-container": "#5c6470",
+          "on-secondary": "#342e37",
+          "primary": "#bfc7d5",
+          "on-secondary-container": "#beb5c0",
+          "inverse-surface": "#e0e3e7",
+          "error": "#ffb4ab",
+          "on-error-container": "#ffdad6",
+          "tertiary-fixed-dim": "#c6c6c7",
+          "surface-container": "#1c2023",
+          "primary-fixed-dim": "#bfc7d5",
+          "on-primary-fixed": "#141c26",
+          "surface-container-highest": "#313538",
+          "primary-fixed": "#dbe3f1",
+          "surface-container-low": "#181c1f",
+          "secondary-fixed-dim": "#cdc3cf",
+          "secondary-container": "#4d4750",
+          "tertiary-container": "#626464",
+          "tertiary-fixed": "#e2e2e2",
+          "surface-container-high": "#262a2e",
+          "outline-variant": "#44474b",
+          "on-surface": "#e0e3e7",
+          "surface": "#101417",
+          "on-secondary-fixed-variant": "#4b454e",
+          "surface-tint": "#bfc7d5",
+          "on-background": "#e0e3e7",
+          "surface-variant": "#313538",
+          "surface-container-lowest": "#0b0f11",
+          "tertiary": "#c6c6c7",
+          "on-error": "#690005",
+          "secondary": "#cdc3cf",
+          "on-primary": "#29313c",
+          "on-tertiary-fixed": "#1a1c1c",
+          "inverse-primary": "#575f6b",
+          "outline": "#8f9196"
+        },
+        borderRadius: {
+          "DEFAULT": "0.125rem",
+          "lg": "0.25rem",
+          "xl": "0.5rem",
+          "full": "0.75rem"
+        },
+        fontFamily: {
+          "headline": ["Space Grotesk"],
+          "body": ["Inter"],
+          "label": ["Inter"]
+        }
+      }
+    }
+  }
+</script>
+<style>
+  .material-symbols-outlined {
+    font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+  }
+  body {
+    font-family: 'Inter', sans-serif;
+    background-color: #101417;
+  }
+  .headline-font { font-family: 'Space Grotesk', sans-serif; }
+  .circuit-bg {
+    background-image: radial-gradient(circle at 2px 2px, rgba(191, 199, 213, 0.05) 1px, transparent 0);
+    background-size: 40px 40px;
+  }
+  .architectural-line {
+    background: linear-gradient(to bottom, transparent, #44474b 50%, transparent);
+    width: 1px;
+  }
+  .glass-card {
+    background: rgba(28, 32, 35, 0.6);
+    backdrop-filter: blur(20px);
+  }
+  .architectural-grid {
+    background-image:
+      linear-gradient(to right, rgba(68, 71, 75, 0.1) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(68, 71, 75, 0.1) 1px, transparent 1px);
+    background-size: 80px 80px;
+  }
+  html { scroll-behavior: smooth; }
+</style>
+</head>
+<body class="bg-background text-on-background selection:bg-primary selection:text-on-primary">
 
-<html xmlns="http://www.w3.org/1999/html">
-	<head>
-		<title>Mihir Shelar</title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="assets/css/main.css" />
-		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
-	</head>
-	<body class="is-preload">
+<!-- ═══════════════════════════════ NAV ═══════════════════════════════ -->
+<nav class="fixed top-0 w-full z-50 bg-slate-950/80 backdrop-blur-xl border-b border-slate-800/30">
+  <div class="flex justify-between items-center px-8 py-4 max-w-7xl mx-auto">
+    <div class="text-xl font-bold tracking-tighter text-slate-100 headline-font uppercase">ARCHITECT.TPM</div>
+    <div class="hidden md:flex space-x-8">
+      <a href="#intro"      class="text-slate-500 hover:text-slate-200 transition-colors headline-font tracking-tight uppercase text-sm">INTRO</a>
+      <a href="#experience" class="text-slate-500 hover:text-slate-200 transition-colors headline-font tracking-tight uppercase text-sm">EXPERIENCE</a>
+      <a href="#skills"     class="text-slate-500 hover:text-slate-200 transition-colors headline-font tracking-tight uppercase text-sm">SKILLS</a>
+      <a href="#speaking"   class="text-slate-500 hover:text-slate-200 transition-colors headline-font tracking-tight uppercase text-sm">SPEAKING</a>
+      <a href="#contact"    class="text-slate-500 hover:text-slate-200 transition-colors headline-font tracking-tight uppercase text-sm">CONTACT</a>
+    </div>
+    <a href="Mihir_Resume.docx" download="Mihir_Shelar_Resume.docx"
+       class="bg-primary text-on-primary px-6 py-2 text-sm font-bold tracking-widest uppercase rounded-DEFAULT hover:bg-primary-fixed-dim active:opacity-80 active:scale-95 transition-all duration-300">
+      Download CV
+    </a>
+  </div>
+</nav>
 
-		<!-- Wrapper -->
-			<div id="wrapper">
+<!-- ═══════════════════════════════ INTRO ════════════════════════════ -->
+<section id="intro" class="relative min-h-screen pt-24 overflow-hidden flex flex-col items-center justify-center">
+  <!-- Background -->
+  <div class="absolute inset-0 z-0 opacity-20 pointer-events-none">
+    <div class="circuit-bg absolute inset-0"></div>
+    <div class="absolute left-[10%] top-0 w-[1px] h-full bg-outline-variant/30"></div>
+    <div class="absolute left-[10%] top-[40%] w-[40px] h-[1px] bg-outline-variant/30"></div>
+    <div class="absolute right-[15%] top-0 w-[1px] h-full bg-outline-variant/30"></div>
+    <div class="absolute right-[5%] bottom-[20%] w-[100px] h-[1px] bg-outline-variant/30"></div>
+    <div class="absolute left-0 top-[25%] w-full h-[1px] bg-outline-variant/20"></div>
+    <div class="absolute left-[10%] top-[40%] w-2 h-2 rounded-full bg-primary/40 -translate-x-1/2 -translate-y-1/2"></div>
+    <div class="absolute right-[15%] top-[75%] w-2 h-2 rounded-full bg-primary/40 -translate-x-1/2 -translate-y-1/2"></div>
+  </div>
 
-				<!-- Header -->
-					<header id="header">
-						<div class="logo">
-							<img src="images/Mihir.jpg" alt="Mihir Shelar" />
-						</div>
-						<div class="content">
-							<div class="inner">
-								<h1>Mihir Shelar</h1>
-								<p>Bothell, WA | mihirshelar@gmail.com | (206)331-6698<br />
-								Master of Science in Computer Networks from <a href="https://www.njit.edu/">New Jersey Institute of Technology</a> (2016) and <br />
-								Bachelor of Engineering in Electronics from <a href="http://www.mum.digitaluniversity.ac/default.aspx">University of Mumbai</a> (2013)<br />
-									Senior Technical Program Manager with 10+ years of experience in tech and automotive industries. Please find my detailed <a href="#work">work experience here</a>.
-								</p>
-							</div>
-						</div>
-						<nav>
-							<ul>
-								<li><a href="#intro">Intro</a></li>
-								<li><a href="#work">Experience</a></li>
-								<li><a href="#about">Skills</a></li>
-								<li><a href="#education">Education</a></li>
-								<li><a href="#contact">Contact</a></li>
-								<!--<li><a href="#elements">Elements</a></li>-->
-							</ul>
-						</nav>
-					</header>
+  <div class="relative z-10 max-w-7xl mx-auto px-8 w-full">
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+      <!-- Hero Content -->
+      <div class="lg:col-span-8 space-y-10">
+        <div class="space-y-4">
+          <div class="flex items-center gap-4 text-primary font-bold tracking-[0.3em] text-xs uppercase">
+            <span class="w-12 h-[1px] bg-primary"></span>
+            Systems Architect &amp; Global Leader
+          </div>
+          <h1 class="headline-font text-5xl md:text-7xl lg:text-8xl font-bold tracking-tighter text-on-surface leading-[0.9]">
+            Hi, I'm Mihir.<br/>
+            <span class="text-primary/60 font-light italic text-4xl md:text-5xl lg:text-6xl">Senior Technical Program Manager at Amazon</span>
+          </h1>
+          <p class="text-base md:text-lg text-on-surface-variant font-light max-w-3xl leading-relaxed tracking-tight border-l-2 border-primary/20 pl-6">
+            I specialize in AI hardware innovation, connected ecosystems, and global product scalability. Currently, I serve as the Single-Threaded Owner (STO) for Amazon's upcoming AI-powered device launches—a CEO-sponsored initiative expanding across multiple international marketplaces. I also manage the release architecture for the Amazon Kids Fire HD ecosystem, scaling applications across Android, iOS, and FireOS to serve over 10 million active subscribers. My career is built on bridging the gap between ambitious product vision and flawless technical execution. Whether I am leading tiger teams to revamp operating systems or defining roadmaps for 30+ engineers, my focus is on delivering operational excellence at a massive scale. Beyond my daily work, I am deeply passionate about mentoring the next generation of builders and frequently volunteer as a technical judge and mentor for tech incubators and hackathons. If you're interested in discussing product scaling, AI hardware, or potential speaking/judging opportunities, let's connect!
+          </p>
+        </div>
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <a href="https://github.com/mihir-liverpool" target="_blank"
+             class="group flex items-center justify-between p-4 bg-surface-container-low border border-outline-variant/20 rounded-lg hover:bg-surface-container hover:border-primary/50 transition-all duration-300">
+            <span class="text-sm font-bold tracking-widest uppercase text-on-surface">Code &amp; Open Source</span>
+            <span class="material-symbols-outlined text-primary group-hover:translate-x-1 transition-transform">arrow_forward</span>
+          </a>
+          <a href="https://www.goodreads.com/user/show/74327217-mihir-shelar" target="_blank"
+             class="group flex items-center justify-between p-4 bg-surface-container-low border border-outline-variant/20 rounded-lg hover:bg-surface-container hover:border-primary/50 transition-all duration-300">
+            <span class="text-sm font-bold tracking-widest uppercase text-on-surface">What I'm Reading</span>
+            <span class="material-symbols-outlined text-primary group-hover:translate-x-1 transition-transform">arrow_forward</span>
+          </a>
+          <a href="#contact"
+             class="group flex items-center justify-between p-4 bg-surface-container-low border border-outline-variant/20 rounded-lg hover:bg-surface-container hover:border-primary/50 transition-all duration-300">
+            <span class="text-sm font-bold tracking-widest uppercase text-on-surface">Get in Touch</span>
+            <span class="material-symbols-outlined text-primary group-hover:translate-x-1 transition-transform">arrow_forward</span>
+          </a>
+          <a href="#experience"
+             class="group flex items-center justify-between p-4 bg-surface-container-low border border-outline-variant/20 rounded-lg hover:bg-surface-container hover:border-primary/50 transition-all duration-300">
+            <span class="text-sm font-bold tracking-widest uppercase text-on-surface">Detailed Experience</span>
+            <span class="material-symbols-outlined text-primary group-hover:translate-x-1 transition-transform">arrow_forward</span>
+          </a>
+        </div>
+      </div>
 
-				<!-- Main -->
-					<div id="main">
+      <!-- Profile Photo -->
+      <div class="lg:col-span-4 relative hidden lg:block">
+        <div class="aspect-square relative flex items-center justify-center">
+          <div class="absolute inset-0 bg-surface-container-high rounded-xl overflow-hidden border border-outline-variant/20 shadow-2xl">
+            <img class="w-full h-full object-cover grayscale opacity-80 contrast-125" src="images/Mihir.jpg" alt="Mihir Shelar"/>
+            <div class="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent"></div>
+          </div>
+          <div class="absolute -bottom-6 -left-6 bg-surface-container-highest/80 backdrop-blur-md p-6 border border-outline-variant/30 rounded-lg shadow-2xl max-w-[200px]">
+            <p class="text-[10px] text-primary font-bold tracking-widest uppercase mb-1">Current Focus</p>
+            <p class="text-on-surface headline-font font-bold text-lg leading-tight">Next-Gen AI Hardware Acceleration</p>
+          </div>
+        </div>
+      </div>
+    </div>
 
-						<!-- Intro -->
-							<article id="intro">
-								<h2 class="major">Intro</h2>
-								<span class="image main"><img src="images/pic01.jpg" alt="" /></span>
-								<p> Aloha, This is Mihir. <br/>
-									I'm a Senior Technical Program Manager with over 10 years of experience in tech and automotive industries, specializing in program management, QA automation, and cross-functional team leadership. My career spans roles at Amazon, Hyundai, and Motorola, where I've driven successful product launches and operational excellence.<br/>
-									You can find me here: <br /><br />
-									GitHub: <a href="https://github.com/mihir-liverpool/">mihir-liverpool</a> <br />
-									LinkedIn: <a href="https://www.linkedin.com/in/mihirshelar/">mihirshelar</a> <br />
-									Goodreads: <a href="https://www.goodreads.com/user/show/74327217-mihir-shelar">Mihir Shelar</a><br />
-									Want to get in contact? <a href="#contact">Click here</a><br />
-									Please find my detailed <a href="#work">work experience here</a>.</p>
-							</article>
+    <!-- Stats Row -->
+    <div class="mt-24 grid grid-cols-2 md:grid-cols-4 gap-[1px] bg-outline-variant/20 border border-outline-variant/20 overflow-hidden rounded-xl">
+      <div class="bg-surface-container-low p-8 flex flex-col justify-center items-start space-y-1">
+        <span class="text-primary headline-font text-3xl font-bold">10+</span>
+        <span class="text-[10px] text-on-surface-variant font-bold tracking-widest uppercase">Years Experience</span>
+      </div>
+      <div class="bg-surface-container-low p-8 flex flex-col justify-center items-start space-y-1">
+        <span class="text-primary headline-font text-3xl font-bold">10M+</span>
+        <span class="text-[10px] text-on-surface-variant font-bold tracking-widest uppercase">Users Managed</span>
+      </div>
+      <div class="bg-surface-container-low p-8 flex flex-col justify-center items-start space-y-1">
+        <span class="text-primary headline-font text-3xl font-bold">3</span>
+        <span class="text-[10px] text-on-surface-variant font-bold tracking-widest uppercase">Net-New AI Devices</span>
+      </div>
+      <div class="bg-surface-container-low p-8 flex flex-col justify-center items-start space-y-1">
+        <span class="text-primary headline-font text-3xl font-bold">$500M+</span>
+        <span class="text-[10px] text-on-surface-variant font-bold tracking-widest uppercase">YoY Revenue</span>
+      </div>
+    </div>
+  </div>
+</section>
 
-						<!-- Work -->
-							<article id="work">
-								<h2 class="major">Experience</h2>
-								<span class="image main"><img src="images/pic02.jpg" alt="" /></span>
-								<h3>Senior Technical Program Manager III (LTPM for Kids Fire Tablets)</h3>
-								<p><strong>Amazon Corporate LLC (June 2023 – Current)</strong></p>
-								<ul>
-									<li>Single threaded owner for release management of a stand-alone application across multiple platforms such as Fire Tablet, Alexa, Fire TV, Android and iOS which has ~10M subscribers and generates revenue of more than $500M YoY</li>
-									<li>Administered and managed device releases for all Fire HD tablet 7', 8' and 10' tablets currently in market which generated more than $500M profit and currently leading the next generation devices going out in 2026</li>
-									<li>Currently leading a tiger team of 7 SDEs & 1 QAE to revamp the operating system on Amazon tablets and closely collaborating with a fortune 10 company engineers on a weekly basis</li>
-									<li>Designed and implemented the roadmap for the entire organization consisting of more than four development teams (32 engineers), enabling the team to forecast the development and releases for the year</li>
-									<li>Created and implemented best practices for intake process for all the software development teams in the organization which plugged into the roadmap for the fiscal year and empowered the quarterly bandwidth projections of the organization</li>
-									<li>Acted as a customer champion by setting up a VOF (Voice of customer) ceremony by identifying the key customer complaints and identifying the roadblocks in obtaining the most value from our product across multiple platforms</li>
-									<li>Developed comprehensive monitoring of risks, issues, dependencies, contingency plans and available resources to remove any roadblocks resulting in 10/10 successful yearly OTA (over the air) releases without any delays</li>
-									<li>Interviewed, and recruited more than 10 engineers and 3 TPMs across various teams in the organization and mentored them while pioneering the onboarding plans for new hires and governing the new hire documentations for smooth transitions</li>
-									<li>Owned and delivered complex End to end projects by initiating requirement gathering, defining scope/success criteria's, budgets, work plans and bandwidth allocations, sprint planning, schedules and roll out and roll back strategies</li>
-									<li>Successfully planned and executed more than 52 sprint cycles as a Scrum master for 6 development teams consisting of more than 30 development engineers, 6 QA engineers and 4 business intelligence engineers/data engineers</li>
-									<li>Collaborated between the product and tech teams, contributing to new ideas and bridging gaps throughout the lifecycle while reporting overall health status, budget, forecast and exec summary of the projects to leaderships including CEO, CFO and VPs</li>
-								</ul>
+<!-- ════════════════════════════ EXPERIENCE ══════════════════════════ -->
+<section id="experience" class="pt-32 pb-24 px-8 max-w-7xl mx-auto">
+  <header class="mb-24 flex flex-col md:flex-row justify-between items-end gap-8">
+    <div class="max-w-2xl">
+      <span class="font-label text-xs tracking-[0.3em] uppercase text-primary mb-4 block">Milestones &amp; Growth</span>
+      <h2 class="headline-font text-5xl md:text-7xl font-bold tracking-tighter leading-none mb-6">Work Experience</h2>
+      <p class="text-on-surface-variant font-body text-lg leading-relaxed border-l border-outline-variant pl-6">
+        Over a decade of orchestrating complex cloud infrastructures and cross-functional engineering initiatives. Specialized in turning ambiguity into architectural certainty.
+      </p>
+    </div>
+    <div class="hidden md:block text-right">
+      <div class="text-6xl headline-font font-black text-surface-container-highest opacity-50 tracking-tighter">10+ YEARS</div>
+      <div class="font-label text-xs tracking-widest text-outline">TECHNICAL PROGRAM MANAGEMENT</div>
+    </div>
+  </header>
 
-								<h3>Technical Program Manager II / Quality Engineer</h3>
-								<p><strong>Amazon Corporate LLC (Aug 2017 – Jun 2023)</strong></p>
-								<ul>
-									<li>Managed and coordinated all the funds and man hours spent for the Alexa catalog operations org, while maintaining and organizing a weekly, monthly and quarterly forecast for the org consisting of 100 employees</li>
-									<li>Spearheaded the QA Automation drive across organization which automated 1600 test cases and established a pipeline to execute all the test cases at every merge to mainline, helping catch bugs at creation of each build</li>
-									<li>Strategized and re-organized the dev teams to ensure the delivery for more than 10 OTA releases over the period of 2 years which resulted into a growth from 1M to 10M customers over the period</li>
-									<li>Pioneered TPM engagement model using RACI charts and engagement models to direct appropriate projects to TPM in org</li>
-								</ul>
+  <!-- Timeline -->
+  <div class="relative">
+    <div class="absolute left-0 md:left-1/2 top-0 bottom-0 w-px bg-outline-variant/30 -translate-x-1/2"></div>
+    <div class="space-y-32">
 
-								<h3>System/Quality Engineer P3 North America</h3>
-								<p><strong>Hyundai Motor America (Oct 2016 – Aug 2017)</strong></p>
-								<ul>
-									<li>Create test cases based on system documents and flowcharts to ensure that the entire system is validated; this includes the execution of Happy Path user flow as well as discovering edge cases and potential error scenarios</li>
-									<li>Lead Validation efforts for 20 Hyundai app release, 15 Genesis app releases and developed test plans with over 8000 test cases</li>
-								</ul>
+      <!-- Amazon Senior TPM III -->
+      <div class="relative grid grid-cols-1 md:grid-cols-2 gap-12 items-start">
+        <div class="md:text-right md:pr-16 order-2 md:order-1">
+          <div class="inline-block px-3 py-1 bg-secondary-container text-on-secondary-container rounded-full text-[10px] font-bold tracking-widest uppercase mb-4">Current Role</div>
+          <h3 class="headline-font text-3xl font-bold text-primary mb-1">Senior Technical Program Manager III</h3>
+          <p class="font-label text-sm text-outline mb-4 tracking-wider uppercase">Amazon Corporate LLC</p>
+        </div>
+        <div class="absolute left-0 md:left-1/2 top-2 w-4 h-4 bg-primary border-4 border-surface -translate-x-1/2 z-10"></div>
+        <div class="md:pl-16 order-1 md:order-2">
+          <span class="headline-font text-5xl font-extrabold text-surface-container-highest tracking-tighter block mb-2">2023 — PRES.</span>
+          <ul class="space-y-4 text-sm text-on-surface">
+            <li class="flex items-start gap-3">
+              <span class="material-symbols-outlined text-primary text-lg shrink-0 mt-0.5">check_circle</span>
+              <div><strong class="text-slate-200">Single-Threaded Owner (STO) for AI Innovation:</strong> Currently driving the launch of 3 net-new AI-powered devices, spearheading an Amazon CEO-level organizational goal culminating in a global flagship announcement.</div>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="material-symbols-outlined text-primary text-lg shrink-0 mt-0.5">check_circle</span>
+              <div><strong class="text-slate-200">Global Market Expansion:</strong> Leading the global expansion strategy to launch new AI devices across 4 net-new international marketplaces.</div>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="material-symbols-outlined text-primary text-lg shrink-0 mt-0.5">check_circle</span>
+              <div><strong class="text-slate-200">Massive Scale &amp; Revenue:</strong> STO for release management of a stand-alone application across Fire Tablet, Alexa, Fire TV, Android, and iOS — ~10M active subscribers generating &gt;$500M YoY revenue.</div>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="material-symbols-outlined text-primary text-lg shrink-0 mt-0.5">check_circle</span>
+              <div><strong class="text-slate-200">Hardware Lifecycle Management:</strong> Administer device releases for all in-market Fire HD 7", 8", and 10" tablets (generating &gt;$500M profit) while leading the next-generation 2026 device roadmap.</div>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="material-symbols-outlined text-primary text-lg shrink-0 mt-0.5">check_circle</span>
+              <div><strong class="text-slate-200">Executive Leadership:</strong> Designed intake and development roadmap for an organization of 32+ engineers, successfully executing 10/10 yearly OTA releases without delay.</div>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="material-symbols-outlined text-primary text-lg shrink-0 mt-0.5">check_circle</span>
+              <div><strong class="text-slate-200">Scrum Master:</strong> Planned and executed 52+ sprint cycles across 6 development teams (30+ SDEs, 6 QAEs, 4 BI/Data Engineers).</div>
+            </li>
+          </ul>
+        </div>
+      </div>
 
-								<h3>System Engineer</h3>
-								<p><strong>Larsen and Toubro Tech Services / Zebra Technologies/Motorola Solutions (Aug 2015 – Oct 2016)</strong></p>
-								<ul>
-									<li>Managed, utilized and maintained AirWatch, SOTI (mobi control stage), MSP, Async, BES10, MobileIron, Boxtone, MaaS 360 and other MDM Solutions. Planned, lead and technically participated with enterprise-wide mobility infrastructure implementations, upgrades and migrations on AirWatch</li>
-								</ul>
+      <!-- Previous Roles -->
+      <div class="relative grid grid-cols-1 md:grid-cols-2 gap-12 items-start">
+        <div class="md:pr-16 md:order-1">
+          <span class="headline-font text-5xl font-extrabold text-surface-container-highest tracking-tighter block mb-2">2015 — 2023</span>
+          <ul class="space-y-4 text-sm text-on-surface">
+            <li class="flex items-start gap-3">
+              <span class="material-symbols-outlined text-primary text-lg shrink-0 mt-0.5">verified</span>
+              <div><strong class="text-slate-200">Technical Program Manager II (Amazon, 2017–2023):</strong> Managed forecasts and funding for a 100-person Alexa catalog operations org. Spearheaded a QA Automation drive (1600+ test cases automated) and scaled OTA delivery supporting growth from 1M to 10M customers.</div>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="material-symbols-outlined text-primary text-lg shrink-0 mt-0.5">verified</span>
+              <div><strong class="text-slate-200">System/Quality Engineer (Hyundai Motor America, 2016–2017):</strong> Led validation efforts for 20 Hyundai app releases and 15 Genesis app releases, developing test plans with over 8,000 edge cases.</div>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="material-symbols-outlined text-primary text-lg shrink-0 mt-0.5">verified</span>
+              <div><strong class="text-slate-200">System Engineer (Zebra Technologies / L&amp;T Tech Services, 2015–2016):</strong> Led enterprise-wide mobility infrastructure implementations and migrations on AirWatch and other MDM solutions.</div>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="material-symbols-outlined text-primary text-lg shrink-0 mt-0.5">verified</span>
+              <div><strong class="text-slate-200">Web Developer (NJIT, 2014–2015):</strong> Maintenance, design, and implementation of the NJIT Women's Center website using .NET, Drupal, and SiteStudio.</div>
+            </li>
+          </ul>
+        </div>
+        <div class="absolute left-0 md:left-1/2 top-2 w-4 h-4 bg-surface-variant border-4 border-surface -translate-x-1/2 z-10"></div>
+        <div class="md:pl-16 md:text-left order-2 md:order-2">
+          <h3 class="headline-font text-3xl font-bold text-primary mb-1">Previous Roles &amp; Foundational Experience</h3>
+          <p class="font-label text-sm text-outline mb-4 tracking-wider uppercase">Amazon · Hyundai · Zebra / Motorola · NJIT</p>
+        </div>
+      </div>
 
-								<h3>Web Developer</h3>
-								<p><strong>New Jersey Institute of Technology (Sep 2014 – Aug 2015)</strong></p>
-								<ul>
-									<li>Responsible for maintenance, design and implementation of website http://womenscenter.njit.edu using .NET, Drupal, SiteStudio</li>
-								</ul>
-							</article>
+    </div>
+  </div>
 
-						<!-- Project -->
-							<article id="about">
-								<h2 class="major">Skills</h2>
-								<span class="image main"><img src="images/pic03.jpg" alt="" /></span>
-								<p>
-									<strong>Program/Project/Product Management:</strong> Customer Management | Team building &amp; Mentoring | Agile/Scrum Methodologies | SDLC | HDLC | Software design &amp; Architecture | System Design Strategy | Machine Learning and Database fundamentals | Operational excellence | Release/Change Management | Roadmap creation | Requirement gathering | Backlog prioritization | Scrum master | Sprint planning/retro | Bug Triage | Roadblock management | Risk assessment | Timeline management | Stakeholder management | Status reporting | Offshore collaboration | Cross team collaboration | Defect management | Debug analysis | Budgeting | Budget forecasting | Resource Management | Supply Chain | KPI development | Metrics | RACI/Gantt charts | MS Suite<br/><br/>
-									<strong>Quality Assurance:</strong> QA Management | Adhoc, Smoke, Acceptance, Integration, End-to-End, Stress and Regression Testing<br/><br/>
-									<strong>QA Automation:</strong> Selenium, Appium, Cucumber, UiAutomator, Robot Framework, Jenkins<br/><br/>
-									<strong>Programming Languages:</strong> Python | Java | HTML/CSS<br/><br/>
-									<strong>Databases &amp; Query Languages:</strong> MySQL | MS SQL | DynamoDB | JQL | SQL<br/><br/>
-									<strong>Cloud &amp; Tools:</strong> Azure | AWS (Lambda, DynamoDB, SNS, Polly, S3, Chime) | GIT | Linux/Mac/Windows OS | Figma | RAID logs | Asana | Confluence<br/><br/>
-									<strong>Content Management Systems:</strong> Drupal, Wordpress, Sharepoint<br/><br/>
-									<strong>Deployment Tools:</strong> Airwatch, SOTI, MSP, Async, BES10, MobileIron, Maas360, KOTA
-								</p>
-							</article>
+  <!-- Career Pillars -->
+  <div class="mt-48 grid grid-cols-1 md:grid-cols-3 gap-px bg-outline-variant/20 border border-outline-variant/20">
+    <div class="bg-surface-container-low p-8">
+      <div class="text-primary mb-6"><span class="material-symbols-outlined text-4xl">precision_manufacturing</span></div>
+      <h4 class="headline-font text-xl font-bold mb-3 uppercase tracking-tight">Precision Execution</h4>
+      <p class="text-sm text-on-surface-variant">Proven track record of managing $50M+ annual budgets and multi-year roadmaps with 99.99% on-time delivery.</p>
+    </div>
+    <div class="bg-surface-container-low p-8">
+      <div class="text-primary mb-6"><span class="material-symbols-outlined text-4xl">architecture</span></div>
+      <h4 class="headline-font text-xl font-bold mb-3 uppercase tracking-tight">Systemic Strategy</h4>
+      <p class="text-sm text-on-surface-variant">Expertise in socio-technical systems—aligning organizational structures with software architecture.</p>
+    </div>
+    <div class="bg-surface-container-low p-8">
+      <div class="text-primary mb-6"><span class="material-symbols-outlined text-4xl">diversity_3</span></div>
+      <h4 class="headline-font text-xl font-bold mb-3 uppercase tracking-tight">High-Stakes Leadership</h4>
+      <p class="text-sm text-on-surface-variant">Trusted by C-suite stakeholders to deliver mission-critical infrastructure under extreme pressure.</p>
+    </div>
+  </div>
+</section>
 
-						<!-- Education -->
-							<article id="education">
-								<h2 class="major">Education</h2>
-								<h3>Master of Science in Computer Networks</h3>
-								<p><strong><a href="https://www.njit.edu/">New Jersey Institute of Technology</a> — Newark, NJ (Aug 2014 – May 2016)</strong><br/>
-								GPA: 3.6 / 4.0<br/>
-								Organized and won the NJ-PAC Table Tennis Tournament.</p>
+<!-- ══════════════════════════════ SKILLS ════════════════════════════ -->
+<section id="skills" class="pt-32 pb-24 px-8 max-w-7xl mx-auto min-h-screen">
+  <header class="mb-20 flex flex-col md:flex-row md:items-end justify-between gap-8">
+    <div class="max-w-2xl">
+      <span class="text-xs uppercase tracking-[0.3em] text-outline mb-4 block font-label">Capabilities Matrix</span>
+      <h2 class="text-5xl md:text-7xl headline-font font-bold text-on-surface tracking-tighter leading-tight">
+        Technical Architecture<br/><span class="text-primary">&amp; Strategy</span>
+      </h2>
+    </div>
+    <div class="text-on-surface-variant max-w-xs text-sm leading-relaxed border-l border-outline-variant/30 pl-6">
+      Engineered approaches to complex technical delivery. Bridging the gap between silicon-level constraints and high-level product vision.
+    </div>
+  </header>
 
-								<h3>Bachelor of Engineering in Electronics Engineering</h3>
-								<p><strong><a href="http://www.mum.digitaluniversity.ac/default.aspx">University of Mumbai</a> — Mumbai, Maharashtra (Aug 2009 – May 2013)</strong><br/>
-								GPA: 3.5 / 4.0<br/>
-								Organized state level Table Tennis Tournament for Mumbai University.</p>
-							</article>
+  <div class="grid grid-cols-1 md:grid-cols-12 gap-6 auto-rows-min">
+    <!-- Executive Leadership -->
+    <div class="md:col-span-8 rounded-lg bg-surface-container border border-outline-variant/10 p-10 flex flex-col justify-center">
+      <div class="flex items-center gap-3 mb-6">
+        <span class="material-symbols-outlined text-primary">account_tree</span>
+        <span class="text-xs font-label tracking-widest uppercase text-outline">Leadership</span>
+      </div>
+      <h3 class="text-3xl headline-font font-bold mb-6">Executive Leadership &amp; Strategy</h3>
+      <div class="flex flex-wrap gap-3">
+        <span class="px-4 py-2 rounded bg-surface-container-highest text-on-surface text-sm border border-outline-variant/20">Single-Threaded Ownership (STO)</span>
+        <span class="px-4 py-2 rounded bg-surface-container-highest text-on-surface text-sm border border-outline-variant/20">Global Product Roadmapping</span>
+        <span class="px-4 py-2 rounded bg-surface-container-highest text-on-surface text-sm border border-outline-variant/20">HDLC/SDLC</span>
+        <span class="px-4 py-2 rounded bg-surface-container-highest text-on-surface text-sm border border-outline-variant/20">Agile/Scrum Scaling</span>
+        <span class="px-4 py-2 rounded bg-surface-container-highest text-on-surface text-sm border border-outline-variant/20">Scalability &amp; Performance</span>
+        <span class="px-4 py-2 rounded bg-surface-container-highest text-on-surface text-sm border border-outline-variant/20">Operational Excellence</span>
+        <span class="px-4 py-2 rounded bg-surface-container-highest text-on-surface text-sm border border-outline-variant/20">Stakeholder Management</span>
+        <span class="px-4 py-2 rounded bg-surface-container-highest text-on-surface text-sm border border-outline-variant/20">RACI / Gantt Charts</span>
+        <span class="px-4 py-2 rounded bg-surface-container-highest text-on-surface text-sm border border-outline-variant/20">Budget &amp; Resource Management</span>
+        <span class="px-4 py-2 rounded bg-surface-container-highest text-on-surface text-sm border border-outline-variant/20">Risk Assessment</span>
+      </div>
+    </div>
 
-						<!-- Contact -->
-							<article id="contact">
-								<h2 class="major">Contact</h2>
-								<form method="post" action="#">
-									<div class="fields">
-										<div class="field half">
-											<label for="name">Name</label>
-											<input type="text" name="name" id="name" />
-										</div>
-										<div class="field half">
-											<label for="email">Email</label>
-											<input type="text" name="email" id="email" />
-										</div>
-										<div class="field">
-											<label for="message">Message</label>
-											<textarea name="message" id="message" rows="4"></textarea>
-										</div>
-									</div>
-									<ul class="actions">
-										<li><input type="submit" value="Send Message" class="primary" /></li>
-										<li><input type="reset" value="Reset" /></li>
-									</ul>
-								</form>
-								<ul class="icons">
-									<li><a href="https://twitter.com/mihir_Liverpool" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
-									<li><a href="https://www.facebook.com/mihir.shelar/" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
-									<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
-									<li><a href="https://github.com/mihir-liverpool" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
-								</ul>
-							</article>
+    <!-- Cloud Architecture (Tall Card) -->
+    <div class="md:col-span-4 md:row-span-2 bg-surface-container-high rounded-lg p-8 border border-outline-variant/10 flex flex-col">
+      <div class="mb-10">
+        <span class="material-symbols-outlined text-primary text-4xl mb-6">cloud_done</span>
+        <h3 class="text-2xl headline-font font-bold mb-8">Cloud Architecture &amp; AI Integration</h3>
+        <ul class="space-y-6">
+          <li class="flex items-start gap-4">
+            <div class="w-1 h-12 architectural-line"></div>
+            <div>
+              <span class="block text-xs font-bold text-on-surface mb-1">AWS ECOSYSTEM</span>
+              <span class="text-xs text-on-surface-variant">Lambda, DynamoDB, S3, SNS, Polly, Chime</span>
+            </div>
+          </li>
+          <li class="flex items-start gap-4">
+            <div class="w-1 h-12 architectural-line"></div>
+            <div>
+              <span class="block text-xs font-bold text-on-surface mb-1">AZURE</span>
+              <span class="text-xs text-on-surface-variant">Azure Cloud Services</span>
+            </div>
+          </li>
+          <li class="flex items-start gap-4">
+            <div class="w-1 h-12 architectural-line"></div>
+            <div>
+              <span class="block text-xs font-bold text-on-surface mb-1">DATA &amp; ML</span>
+              <span class="text-xs text-on-surface-variant">Apache Spark, Hadoop</span>
+            </div>
+          </li>
+          <li class="flex items-start gap-4">
+            <div class="w-1 h-12 architectural-line"></div>
+            <div>
+              <span class="block text-xs font-bold text-on-surface mb-1">DATABASES</span>
+              <span class="text-xs text-on-surface-variant">DynamoDB, MySQL, MS SQL, JQL</span>
+            </div>
+          </li>
+        </ul>
+      </div>
+      <div class="mt-auto pt-8 border-t border-outline-variant/20">
+        <div class="flex items-center justify-between text-xs font-mono text-outline">
+          <span>CORE PILLAR</span><span>v3.1.0</span>
+        </div>
+      </div>
+    </div>
 
-						<!-- Elements -->
-							<article id="elements">
-								<h2 class="major">Elements</h2>
+    <!-- Quality Engineering -->
+    <div class="md:col-span-4 bg-surface-container-lowest rounded-lg p-8 border border-outline-variant/20 group hover:border-primary/40 transition-colors">
+      <div class="flex justify-between items-start mb-6">
+        <span class="material-symbols-outlined text-primary">fact_check</span>
+        <span class="text-[10px] font-mono text-outline px-2 py-1 border border-outline-variant/30">VALIDATION</span>
+      </div>
+      <h4 class="text-lg headline-font font-bold mb-4">Quality Engineering &amp; CI/CD</h4>
+      <div class="space-y-3">
+        <div>
+          <span class="block text-[10px] font-bold text-outline uppercase tracking-wider mb-1">Automation Frameworks</span>
+          <p class="text-xs text-on-surface-variant">Selenium, Appium, Cucumber, UiAutomator, Robot Framework</p>
+        </div>
+        <div>
+          <span class="block text-[10px] font-bold text-outline uppercase tracking-wider mb-1">Pipelines &amp; Versioning</span>
+          <p class="text-xs text-on-surface-variant">Jenkins, GIT, CI/CD Deployment</p>
+        </div>
+        <div>
+          <span class="block text-[10px] font-bold text-outline uppercase tracking-wider mb-1">Test Management</span>
+          <p class="text-xs text-on-surface-variant">JIRA, TestRail, HP Quality Center, Bugzilla</p>
+        </div>
+        <div>
+          <span class="block text-[10px] font-bold text-outline uppercase tracking-wider mb-1">Methodologies</span>
+          <p class="text-xs text-on-surface-variant">End-to-End System Validation, Stress/Regression Testing</p>
+        </div>
+      </div>
+    </div>
 
-								<section>
-									<h3 class="major">Text</h3>
-									<p>This is <b>bold</b> and this is <strong>strong</strong>. This is <i>italic</i> and this is <em>emphasized</em>.
-									This is <sup>superscript</sup> text and this is <sub>subscript</sub> text.
-									This is <u>underlined</u> and this is code: <code>for (;;) { ... }</code>. Finally, <a href="#">this is a link</a>.</p>
-									<hr />
-									<h2>Heading Level 2</h2>
-									<h3>Heading Level 3</h3>
-									<h4>Heading Level 4</h4>
-									<h5>Heading Level 5</h5>
-									<h6>Heading Level 6</h6>
-									<hr />
-									<h4>Blockquote</h4>
-									<blockquote>Fringilla nisl. Donec accumsan interdum nisi, quis tincidunt felis sagittis eget tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan faucibus. Vestibulum ante ipsum primis in faucibus lorem ipsum dolor sit amet nullam adipiscing eu felis.</blockquote>
-									<h4>Preformatted</h4>
-									<pre><code>i = 0;
+    <!-- Software Engineering -->
+    <div class="md:col-span-4 bg-surface-container-lowest rounded-lg p-8 border border-outline-variant/20 group hover:border-primary/40 transition-colors">
+      <div class="flex justify-between items-start mb-6">
+        <span class="material-symbols-outlined text-primary">code</span>
+        <span class="text-[10px] font-mono text-outline px-2 py-1 border border-outline-variant/30">DEVELOPMENT</span>
+      </div>
+      <h4 class="text-lg headline-font font-bold mb-4">Software Engineering &amp; Core</h4>
+      <div class="space-y-4">
+        <div>
+          <span class="block text-[10px] font-bold text-outline uppercase tracking-wider mb-1">Languages</span>
+          <p class="text-xs text-on-surface-variant">Python, Java, HTML/CSS</p>
+        </div>
+        <div>
+          <span class="block text-[10px] font-bold text-outline uppercase tracking-wider mb-1">Tools &amp; Platforms</span>
+          <p class="text-xs text-on-surface-variant">Figma, Asana, Confluence, MS Suite, Linux/Mac/Windows</p>
+        </div>
+        <div>
+          <span class="block text-[10px] font-bold text-outline uppercase tracking-wider mb-1">CMS Architectures</span>
+          <p class="text-xs text-on-surface-variant">Drupal, WordPress, SharePoint</p>
+        </div>
+      </div>
+    </div>
 
-while (!deck.isInOrder()) {
-    print 'Iteration ' + i;
-    deck.shuffle();
-    i++;
-}
+    <!-- Hardware Ecosystems -->
+    <div class="md:col-span-8 bg-surface-container-low rounded-lg border border-outline-variant/10 p-8 flex flex-col justify-center">
+      <div class="flex items-center gap-3 mb-6">
+        <span class="material-symbols-outlined text-primary">devices</span>
+        <span class="text-xs font-label tracking-widest uppercase text-outline">Devices</span>
+      </div>
+      <h3 class="text-2xl headline-font font-bold mb-4">Hardware Ecosystems &amp; Device Management</h3>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div>
+          <span class="block text-xs font-bold text-on-surface uppercase tracking-wider mb-2 border-b border-outline-variant/20 pb-2">Release Management</span>
+          <p class="text-sm text-on-surface-variant">OTA (Over-The-Air) Deployments, OS Revamps</p>
+        </div>
+        <div>
+          <span class="block text-xs font-bold text-on-surface uppercase tracking-wider mb-2 border-b border-outline-variant/20 pb-2">MDM Solutions</span>
+          <p class="text-sm text-on-surface-variant">AirWatch, SOTI, MobileIron, MaaS360, BES10, KOTA</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
-print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
-								</section>
+<!-- ══════════════════════════════ SPEAKING ══════════════════════════ -->
+<section id="speaking" class="pt-32 pb-24 px-8 max-w-7xl mx-auto">
+  <div class="mb-32 grid md:grid-cols-12 gap-8 items-end">
+    <div class="md:col-span-8">
+      <span class="text-xs uppercase tracking-[0.3em] text-primary mb-4 block font-medium">Industry Contribution</span>
+      <h2 class="text-6xl md:text-8xl headline-font font-bold leading-none tracking-tighter text-on-surface mb-8">
+        Speaking &amp;<br/>Mentorship
+      </h2>
+      <p class="text-xl text-on-surface-variant max-w-2xl leading-relaxed">
+        Bridging the gap between architectural theory and operational reality through global stages and high-impact mentorship.
+      </p>
+    </div>
+  </div>
 
-								<section>
-									<h3 class="major">Lists</h3>
+  <!-- Speaking Engagements -->
+  <div class="mb-32">
+    <div class="flex items-center gap-4 mb-12">
+      <h3 class="text-3xl headline-font font-bold tracking-tight">Speaking Engagements</h3>
+      <div class="h-[1px] flex-grow bg-outline-variant/30"></div>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+      <div class="md:col-span-2 bg-surface-container-low p-8 rounded-lg border border-outline-variant/10 flex flex-col justify-between hover:bg-surface-container transition-colors group">
+        <div>
+          <div class="flex justify-between items-start mb-6">
+            <span class="material-symbols-outlined text-primary text-4xl">podium</span>
+            <span class="text-xs font-mono text-outline uppercase tracking-widest">Keynote</span>
+          </div>
+          <h4 class="text-4xl headline-font font-bold mb-4 group-hover:text-primary transition-colors">From Prototype to 10M Users</h4>
+          <p class="text-on-surface-variant text-lg leading-relaxed max-w-xl">
+            A deep dive into the operational scaling bottlenecks that kill high-growth products. This session explores technical debt management, infrastructure elasticity, and the TPM's role in hyper-growth transitions.
+          </p>
+        </div>
+      </div>
+      <div class="bg-surface-container-highest p-8 rounded-lg border border-outline-variant/10 flex flex-col justify-between">
+        <div>
+          <span class="text-xs font-mono text-primary uppercase tracking-widest mb-4 block">Workshop</span>
+          <h4 class="text-2xl headline-font font-bold mb-4">Engineering Velocity</h4>
+          <p class="text-sm text-on-surface-variant leading-relaxed">Practical frameworks for reducing cycle time without compromising architectural integrity.</p>
+        </div>
+      </div>
+      <div class="bg-surface-container-low p-8 rounded-lg border border-outline-variant/10 flex flex-col justify-between hover:border-primary/30 transition-all">
+        <div>
+          <span class="text-xs font-mono text-primary uppercase tracking-widest mb-4 block">Panel Discussion</span>
+          <h4 class="text-2xl headline-font font-bold mb-4">The Future of AI in SDLC</h4>
+          <p class="text-sm text-on-surface-variant leading-relaxed">Discussing the integration of LLMs into technical program management workflows.</p>
+        </div>
+      </div>
+      <div class="md:col-span-2 bg-gradient-to-br from-surface-container-low to-surface-container-lowest p-8 rounded-lg border border-outline-variant/10 relative overflow-hidden">
+        <h4 class="text-2xl headline-font font-bold mb-6">Mentorship &amp; Incubators</h4>
+        <div class="grid md:grid-cols-2 gap-8">
+          <p class="text-lg text-on-surface-variant leading-relaxed italic border-l-2 border-primary pl-6">
+            "Providing pro-bono technical evaluations for university incubators and global hackathons."
+          </p>
+          <div class="flex flex-col justify-center space-y-4">
+            <div class="flex items-center gap-3">
+              <span class="material-symbols-outlined text-primary">verified</span>
+              <span class="text-sm font-medium">MIT Sandbox Technical Mentor</span>
+            </div>
+            <div class="flex items-center gap-3">
+              <span class="material-symbols-outlined text-primary">verified</span>
+              <span class="text-sm font-medium">ETH Global Hackathon Judge</span>
+            </div>
+            <div class="flex items-center gap-3">
+              <span class="material-symbols-outlined text-primary">verified</span>
+              <span class="text-sm font-medium">Techstars Ecosystem Advisor</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
-									<h4>Unordered</h4>
-									<ul>
-										<li>Dolor pulvinar etiam.</li>
-										<li>Sagittis adipiscing.</li>
-										<li>Felis enim feugiat.</li>
-									</ul>
+<!-- ═══════════════════════════════ CONTACT ══════════════════════════ -->
+<section id="contact" class="relative min-h-screen pt-32 pb-24 overflow-hidden">
+  <div class="absolute inset-0 architectural-grid opacity-40 pointer-events-none"></div>
+  <div class="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-l from-surface-container-low/20 to-transparent pointer-events-none"></div>
 
-									<h4>Alternate</h4>
-									<ul class="alt">
-										<li>Dolor pulvinar etiam.</li>
-										<li>Sagittis adipiscing.</li>
-										<li>Felis enim feugiat.</li>
-									</ul>
+  <div class="relative max-w-7xl mx-auto px-8 grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-24">
+    <!-- Left -->
+    <div class="lg:col-span-5 flex flex-col justify-start">
+      <div class="inline-flex items-center gap-2 mb-6">
+        <div class="w-12 h-[1px] bg-outline-variant/50"></div>
+        <span class="text-xs uppercase tracking-[0.3em] text-primary font-medium">Get In Touch</span>
+      </div>
+      <h2 class="text-5xl lg:text-7xl headline-font font-bold text-on-surface leading-tight tracking-tighter mb-8">
+        Let's Architect<br/><span class="text-outline">the Future.</span>
+      </h2>
+      <p class="text-xl text-on-surface-variant font-light leading-relaxed mb-12 max-w-md">
+        Open to high-impact collaborations, speaking engagements, and technical mentorship.
+      </p>
+      <div class="space-y-8 mt-auto">
+        <div>
+          <p class="text-[10px] uppercase tracking-widest text-outline mb-2">Direct Channel</p>
+          <a href="mailto:mihirshelar@gmail.com" class="text-xl headline-font text-on-surface hover:text-primary transition-colors flex items-center gap-3">
+            mihirshelar@gmail.com
+            <span class="material-symbols-outlined text-sm">arrow_outward</span>
+          </a>
+        </div>
+        <div class="flex gap-12">
+          <div>
+            <p class="text-[10px] uppercase tracking-widest text-outline mb-2">LinkedIn</p>
+            <a href="https://www.linkedin.com/in/mihirshelar/" target="_blank" class="text-lg headline-font text-on-surface hover:text-primary transition-colors flex items-center gap-2">
+              mihirshelar <span class="material-symbols-outlined text-xs">open_in_new</span>
+            </a>
+          </div>
+          <div>
+            <p class="text-[10px] uppercase tracking-widest text-outline mb-2">GitHub</p>
+            <a href="https://github.com/mihir-liverpool" target="_blank" class="text-lg headline-font text-on-surface hover:text-primary transition-colors flex items-center gap-2">
+              mihir-liverpool <span class="material-symbols-outlined text-xs">open_in_new</span>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="hidden lg:block w-px h-32 bg-gradient-to-b from-outline-variant/30 to-transparent mt-16 ml-6"></div>
+    </div>
 
-									<h4>Ordered</h4>
-									<ol>
-										<li>Dolor pulvinar etiam.</li>
-										<li>Etiam vel felis viverra.</li>
-										<li>Felis enim feugiat.</li>
-										<li>Dolor pulvinar etiam.</li>
-										<li>Etiam vel felis lorem.</li>
-										<li>Felis enim et feugiat.</li>
-									</ol>
-									<h4>Icons</h4>
-									<ul class="icons">
-										<li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
-										<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
-										<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
-										<li><a href="#" class="icon brands fa-github"><span class="label">Github</span></a></li>
-									</ul>
+    <!-- Right: Form -->
+    <div class="lg:col-span-7">
+      <div class="bg-surface-container-low p-8 lg:p-12 rounded-lg border border-outline-variant/10 relative overflow-hidden">
+        <div class="absolute -top-24 -right-24 w-64 h-64 bg-primary/5 blur-[100px] rounded-full"></div>
+        <form class="relative z-10 space-y-10" action="mailto:mihirshelar@gmail.com" method="post" enctype="text/plain">
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
+            <div class="relative group">
+              <label class="block text-[10px] uppercase tracking-widest text-outline mb-2 group-focus-within:text-primary transition-colors">Full Name</label>
+              <input name="name" type="text" placeholder="Jane Doe" class="w-full bg-surface-container-lowest border-none border-b border-outline-variant/30 focus:border-primary focus:ring-0 text-on-surface py-3 px-0 text-sm transition-all placeholder:text-surface-bright"/>
+              <div class="absolute bottom-0 left-0 w-0 h-[1px] bg-primary group-focus-within:w-full transition-all duration-500"></div>
+            </div>
+            <div class="relative group">
+              <label class="block text-[10px] uppercase tracking-widest text-outline mb-2 group-focus-within:text-primary transition-colors">Organization</label>
+              <input name="organization" type="text" placeholder="Tech Corp" class="w-full bg-surface-container-lowest border-none border-b border-outline-variant/30 focus:border-primary focus:ring-0 text-on-surface py-3 px-0 text-sm transition-all placeholder:text-surface-bright"/>
+              <div class="absolute bottom-0 left-0 w-0 h-[1px] bg-primary group-focus-within:w-full transition-all duration-500"></div>
+            </div>
+          </div>
+          <div class="relative group">
+            <label class="block text-[10px] uppercase tracking-widest text-outline mb-2 group-focus-within:text-primary transition-colors">Subject</label>
+            <input name="subject" type="text" placeholder="Technical Advisory Request" class="w-full bg-surface-container-lowest border-none border-b border-outline-variant/30 focus:border-primary focus:ring-0 text-on-surface py-3 px-0 text-sm transition-all placeholder:text-surface-bright"/>
+            <div class="absolute bottom-0 left-0 w-0 h-[1px] bg-primary group-focus-within:w-full transition-all duration-500"></div>
+          </div>
+          <div class="relative group">
+            <label class="block text-[10px] uppercase tracking-widest text-outline mb-2 group-focus-within:text-primary transition-colors">Message</label>
+            <textarea name="message" rows="4" placeholder="Briefly describe your project or proposal..." class="w-full bg-surface-container-lowest border-none border-b border-outline-variant/30 focus:border-primary focus:ring-0 text-on-surface py-3 px-0 text-sm transition-all resize-none placeholder:text-surface-bright"></textarea>
+            <div class="absolute bottom-0 left-0 w-0 h-[1px] bg-primary group-focus-within:w-full transition-all duration-500"></div>
+          </div>
+          <div class="pt-6 flex flex-col sm:flex-row items-center justify-between gap-6">
+            <p class="text-xs text-on-surface-variant max-w-xs">By submitting, you agree to technical data handling for communication purposes.</p>
+            <button type="submit" class="w-full sm:w-auto bg-primary text-on-primary headline-font uppercase tracking-widest text-xs font-bold px-10 py-5 rounded-DEFAULT hover:bg-primary-fixed-dim transition-all flex items-center justify-center gap-3 group">
+              Initialize Connection
+              <span class="material-symbols-outlined text-sm group-hover:translate-x-1 transition-transform">send</span>
+            </button>
+          </div>
+        </form>
+      </div>
+      <div class="mt-8 relative h-24 rounded-lg overflow-hidden border border-outline-variant/10">
+        <div class="absolute inset-0 bg-surface-container-low"></div>
+        <div class="absolute bottom-4 left-6 flex items-center gap-3">
+          <div class="w-2 h-2 rounded-full bg-primary animate-pulse"></div>
+          <span class="text-[10px] uppercase tracking-widest text-on-surface-variant font-medium">Currently Based: Bothell, WA</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
-									<h4>Actions</h4>
-									<ul class="actions">
-										<li><a href="#" class="button primary">Default</a></li>
-										<li><a href="#" class="button">Default</a></li>
-									</ul>
-									<ul class="actions stacked">
-										<li><a href="#" class="button primary">Default</a></li>
-										<li><a href="#" class="button">Default</a></li>
-									</ul>
-								</section>
+<!-- ═══════════════════════════════ FOOTER ═══════════════════════════ -->
+<footer class="bg-slate-950 w-full py-12 px-8 border-t border-slate-900 mt-8">
+  <div class="flex flex-col md:flex-row justify-between items-center gap-6 max-w-7xl mx-auto">
+    <div class="text-lg font-black text-slate-200 headline-font uppercase tracking-tighter">M.SHELAR</div>
+    <p class="text-slate-400 text-xs tracking-widest uppercase text-center md:text-left">
+      &copy; 2025 Mihir Shelar · Technical Program Manager Portfolio
+    </p>
+    <div class="flex gap-6 flex-wrap justify-center">
+      <a href="https://www.linkedin.com/in/mihirshelar/" target="_blank" class="text-slate-500 hover:text-slate-100 transition-colors text-xs tracking-widest uppercase">LinkedIn</a>
+      <a href="https://github.com/mihir-liverpool" target="_blank" class="text-slate-500 hover:text-slate-100 transition-colors text-xs tracking-widest uppercase">GitHub</a>
+      <a href="https://twitter.com/mihir_Liverpool" target="_blank" class="text-slate-500 hover:text-slate-100 transition-colors text-xs tracking-widest uppercase">Twitter</a>
+      <a href="Mihir_Resume.docx" download="Mihir_Shelar_Resume.docx" class="text-slate-500 hover:text-slate-100 transition-colors text-xs tracking-widest uppercase">Resume</a>
+    </div>
+  </div>
+</footer>
 
-								<section>
-									<h3 class="major">Table</h3>
-									<h4>Default</h4>
-									<div class="table-wrapper">
-										<table>
-											<thead>
-												<tr>
-													<th>Name</th>
-													<th>Description</th>
-													<th>Price</th>
-												</tr>
-											</thead>
-											<tbody>
-												<tr>
-													<td>Item One</td>
-													<td>Ante turpis integer aliquet porttitor.</td>
-													<td>29.99</td>
-												</tr>
-												<tr>
-													<td>Item Two</td>
-													<td>Vis ac commodo adipiscing arcu aliquet.</td>
-													<td>19.99</td>
-												</tr>
-												<tr>
-													<td>Item Three</td>
-													<td> Morbi faucibus arcu accumsan lorem.</td>
-													<td>29.99</td>
-												</tr>
-												<tr>
-													<td>Item Four</td>
-													<td>Vitae integer tempus condimentum.</td>
-													<td>19.99</td>
-												</tr>
-												<tr>
-													<td>Item Five</td>
-													<td>Ante turpis integer aliquet porttitor.</td>
-													<td>29.99</td>
-												</tr>
-											</tbody>
-											<tfoot>
-												<tr>
-													<td colspan="2"></td>
-													<td>100.00</td>
-												</tr>
-											</tfoot>
-										</table>
-									</div>
-
-									<h4>Alternate</h4>
-									<div class="table-wrapper">
-										<table class="alt">
-											<thead>
-												<tr>
-													<th>Name</th>
-													<th>Description</th>
-													<th>Price</th>
-												</tr>
-											</thead>
-											<tbody>
-												<tr>
-													<td>Item One</td>
-													<td>Ante turpis integer aliquet porttitor.</td>
-													<td>29.99</td>
-												</tr>
-												<tr>
-													<td>Item Two</td>
-													<td>Vis ac commodo adipiscing arcu aliquet.</td>
-													<td>19.99</td>
-												</tr>
-												<tr>
-													<td>Item Three</td>
-													<td> Morbi faucibus arcu accumsan lorem.</td>
-													<td>29.99</td>
-												</tr>
-												<tr>
-													<td>Item Four</td>
-													<td>Vitae integer tempus condimentum.</td>
-													<td>19.99</td>
-												</tr>
-												<tr>
-													<td>Item Five</td>
-													<td>Ante turpis integer aliquet porttitor.</td>
-													<td>29.99</td>
-												</tr>
-											</tbody>
-											<tfoot>
-												<tr>
-													<td colspan="2"></td>
-													<td>100.00</td>
-												</tr>
-											</tfoot>
-										</table>
-									</div>
-								</section>
-
-								<section>
-									<h3 class="major">Buttons</h3>
-									<ul class="actions">
-										<li><a href="#" class="button primary">Primary</a></li>
-										<li><a href="#" class="button">Default</a></li>
-									</ul>
-									<ul class="actions">
-										<li><a href="#" class="button">Default</a></li>
-										<li><a href="#" class="button small">Small</a></li>
-									</ul>
-									<ul class="actions">
-										<li><a href="#" class="button primary icon solid fa-download">Icon</a></li>
-										<li><a href="#" class="button icon solid fa-download">Icon</a></li>
-									</ul>
-									<ul class="actions">
-										<li><span class="button primary disabled">Disabled</span></li>
-										<li><span class="button disabled">Disabled</span></li>
-									</ul>
-								</section>
-
-								<section>
-									<h3 class="major">Form</h3>
-									<form method="post" action="#">
-										<div class="fields">
-											<div class="field half">
-												<label for="demo-name">Name</label>
-												<input type="text" name="demo-name" id="demo-name" value="" placeholder="Jane Doe" />
-											</div>
-											<div class="field half">
-												<label for="demo-email">Email</label>
-												<input type="email" name="demo-email" id="demo-email" value="" placeholder="jane@untitled.tld" />
-											</div>
-											<div class="field">
-												<label for="demo-category">Category</label>
-												<select name="demo-category" id="demo-category">
-													<option value="">-</option>
-													<option value="1">Manufacturing</option>
-													<option value="1">Shipping</option>
-													<option value="1">Administration</option>
-													<option value="1">Human Resources</option>
-												</select>
-											</div>
-											<div class="field half">
-												<input type="radio" id="demo-priority-low" name="demo-priority" checked>
-												<label for="demo-priority-low">Low</label>
-											</div>
-											<div class="field half">
-												<input type="radio" id="demo-priority-high" name="demo-priority">
-												<label for="demo-priority-high">High</label>
-											</div>
-											<div class="field half">
-												<input type="checkbox" id="demo-copy" name="demo-copy">
-												<label for="demo-copy">Email me a copy</label>
-											</div>
-											<div class="field half">
-												<input type="checkbox" id="demo-human" name="demo-human" checked>
-												<label for="demo-human">Not a robot</label>
-											</div>
-											<div class="field">
-												<label for="demo-message">Message</label>
-												<textarea name="demo-message" id="demo-message" placeholder="Enter your message" rows="6"></textarea>
-											</div>
-										</div>
-										<ul class="actions">
-											<li><input type="submit" value="Send Message" class="primary" /></li>
-											<li><input type="reset" value="Reset" /></li>
-										</ul>
-									</form>
-								</section>
-
-							</article>
-
-					</div>
-
-				<!-- Footer -->
-					<footer id="footer">
-						<p class="copyright">&copy; Mihir Shelar: <a href="Mihir_Resume.docx" download="Mihir_Shelar_Resume.docx">Resume</a>.</p>
-					</footer>
-
-			</div>
-
-		<!-- BG -->
-			<div id="bg"></div>
-
-		<!-- Scripts -->
-			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/browser.min.js"></script>
-			<script src="assets/js/breakpoints.min.js"></script>
-			<script src="assets/js/util.js"></script>
-			<script src="assets/js/main.js"></script>
-
-	</body>
+</body>
 </html>
