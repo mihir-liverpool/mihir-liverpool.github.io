@@ -352,7 +352,69 @@
     </div>
   </header>
 
-  <div class="grid grid-cols-1 md:grid-cols-12 gap-6 auto-rows-min">
+  <div class="grid grid-cols-1 md:grid-cols-12 gap-6 auto-rows-[240px]">
+
+    <!-- AI Hardware Ecosystems (Hero Card) -->
+    <div class="md:col-span-8 md:row-span-2 relative group overflow-hidden rounded-lg bg-surface-container border border-outline-variant/10">
+      <div class="absolute inset-0 z-0 opacity-20 transition-transform duration-700 group-hover:scale-105"
+           style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDwsnClOPDZNfI6LjAbDp4mNGK9_6gdSqLT22IJAZmsxfdp6w7Gt7_dBk-1DDAH4e5k820rZ6fqfaZaJ8DV318SPUO3-F3Z-n--wNfcsyz_LoI2r_oQ4fp8NR6JWVvVWEzHA9BqZBR-z7ABrWy4RWNaOy0x4xOZLFrYRAPJ9Pra_imHPhRxHR_ioMAlbUYhVp_XZlpNnS7Dj9GCMDQPQb-S_ib_ud5nGRxwbpIbYygAE9HYiisMmeYzcSC52FWgrw-3cPC2wgx2rQWd'); background-size: cover; background-position: center;"></div>
+      <div class="absolute inset-0 bg-gradient-to-t from-surface-container via-surface-container/60 to-transparent z-10"></div>
+      <div class="relative z-20 h-full p-10 flex flex-col justify-end">
+        <div class="flex items-center gap-3 mb-4">
+          <span class="material-symbols-outlined text-primary">memory</span>
+          <span class="text-xs font-label tracking-widest uppercase text-outline">Compute Infrastructure</span>
+        </div>
+        <h3 class="text-3xl headline-font font-bold mb-4">AI Hardware Ecosystems</h3>
+        <p class="text-on-surface-variant max-w-lg mb-6 leading-relaxed">
+          End-to-end management of GPU clusters and TPU architectures. Specialized in H100 deployment strategies, thermal management at scale, and interconnect optimization (NVLink/InfiniBand).
+        </p>
+        <div class="flex flex-wrap gap-2">
+          <span class="px-4 py-1.5 rounded-full bg-secondary-container text-on-secondary-container text-xs font-medium">H100/A100</span>
+          <span class="px-4 py-1.5 rounded-full bg-secondary-container text-on-secondary-container text-xs font-medium">CUDA Optimization</span>
+          <span class="px-4 py-1.5 rounded-full bg-secondary-container text-on-secondary-container text-xs font-medium">Bare Metal Orchestration</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Cloud Ecosystems (Tall Card alongside AI Hardware) -->
+    <div class="md:col-span-4 md:row-span-3 bg-surface-container-high rounded-lg p-8 border border-outline-variant/10 flex flex-col">
+      <div class="mb-10">
+        <span class="material-symbols-outlined text-primary text-4xl mb-6">cloud_done</span>
+        <h3 class="text-2xl headline-font font-bold mb-4">Cloud Ecosystems</h3>
+        <p class="text-sm text-on-surface-variant leading-relaxed mb-8">
+          Architecting resilient, multi-region distributed systems that prioritize 99.99% uptime and linear scalability.
+        </p>
+        <ul class="space-y-6">
+          <li class="flex items-start gap-4">
+            <div class="w-1 h-12 architectural-line"></div>
+            <div>
+              <span class="block text-xs font-bold text-on-surface mb-1">AWS / AZURE / GCP</span>
+              <span class="text-xs text-on-surface-variant">Hybrid-cloud orchestration and cost governance.</span>
+            </div>
+          </li>
+          <li class="flex items-start gap-4">
+            <div class="w-1 h-12 architectural-line"></div>
+            <div>
+              <span class="block text-xs font-bold text-on-surface mb-1">SERVERLESS</span>
+              <span class="text-xs text-on-surface-variant">Event-driven architectures for high-throughput data processing.</span>
+            </div>
+          </li>
+          <li class="flex items-start gap-4">
+            <div class="w-1 h-12 architectural-line"></div>
+            <div>
+              <span class="block text-xs font-bold text-on-surface mb-1">DATABASES</span>
+              <span class="text-xs text-on-surface-variant">DynamoDB, MySQL, MS SQL, Apache Spark, Hadoop</span>
+            </div>
+          </li>
+        </ul>
+      </div>
+      <div class="mt-auto pt-8 border-t border-outline-variant/20">
+        <div class="flex items-center justify-between text-xs font-mono text-outline">
+          <span>CERTIFIED ARCHITECT</span><span>v2.0.4</span>
+        </div>
+      </div>
+    </div>
+
     <!-- Executive Leadership -->
     <div class="md:col-span-8 rounded-lg bg-surface-container border border-outline-variant/10 p-10 flex flex-col justify-center">
       <div class="flex items-center gap-3 mb-6">
@@ -371,49 +433,6 @@
         <span class="px-4 py-2 rounded bg-surface-container-highest text-on-surface text-sm border border-outline-variant/20">RACI / Gantt Charts</span>
         <span class="px-4 py-2 rounded bg-surface-container-highest text-on-surface text-sm border border-outline-variant/20">Budget &amp; Resource Management</span>
         <span class="px-4 py-2 rounded bg-surface-container-highest text-on-surface text-sm border border-outline-variant/20">Risk Assessment</span>
-      </div>
-    </div>
-
-    <!-- Cloud Architecture (Tall Card) -->
-    <div class="md:col-span-4 md:row-span-2 bg-surface-container-high rounded-lg p-8 border border-outline-variant/10 flex flex-col">
-      <div class="mb-10">
-        <span class="material-symbols-outlined text-primary text-4xl mb-6">cloud_done</span>
-        <h3 class="text-2xl headline-font font-bold mb-8">Cloud Architecture &amp; AI Integration</h3>
-        <ul class="space-y-6">
-          <li class="flex items-start gap-4">
-            <div class="w-1 h-12 architectural-line"></div>
-            <div>
-              <span class="block text-xs font-bold text-on-surface mb-1">AWS ECOSYSTEM</span>
-              <span class="text-xs text-on-surface-variant">Lambda, DynamoDB, S3, SNS, Polly, Chime</span>
-            </div>
-          </li>
-          <li class="flex items-start gap-4">
-            <div class="w-1 h-12 architectural-line"></div>
-            <div>
-              <span class="block text-xs font-bold text-on-surface mb-1">AZURE</span>
-              <span class="text-xs text-on-surface-variant">Azure Cloud Services</span>
-            </div>
-          </li>
-          <li class="flex items-start gap-4">
-            <div class="w-1 h-12 architectural-line"></div>
-            <div>
-              <span class="block text-xs font-bold text-on-surface mb-1">DATA &amp; ML</span>
-              <span class="text-xs text-on-surface-variant">Apache Spark, Hadoop</span>
-            </div>
-          </li>
-          <li class="flex items-start gap-4">
-            <div class="w-1 h-12 architectural-line"></div>
-            <div>
-              <span class="block text-xs font-bold text-on-surface mb-1">DATABASES</span>
-              <span class="text-xs text-on-surface-variant">DynamoDB, MySQL, MS SQL, JQL</span>
-            </div>
-          </li>
-        </ul>
-      </div>
-      <div class="mt-auto pt-8 border-t border-outline-variant/20">
-        <div class="flex items-center justify-between text-xs font-mono text-outline">
-          <span>CORE PILLAR</span><span>v3.1.0</span>
-        </div>
       </div>
     </div>
 
