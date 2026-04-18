@@ -110,7 +110,7 @@
 
 <!-- ═══════════════════════════════ NAV ═══════════════════════════════ -->
 <nav class="fixed top-0 w-full z-50 bg-slate-950/80 backdrop-blur-xl border-b border-slate-800/30">
-  <div class="flex justify-between items-center px-8 py-4 max-w-7xl mx-auto">
+  <div class="flex justify-between items-center px-4 md:px-8 py-4 max-w-7xl mx-auto">
     <div class="headline-font uppercase flex items-center gap-0.5">
       <span class="text-lg font-bold tracking-widest text-slate-100">ARCHITECT</span>
       <span class="text-lg font-light tracking-widest text-primary">.TPM</span>
@@ -122,12 +122,54 @@
       <a href="#speaking"   class="text-slate-500 hover:text-slate-200 transition-colors headline-font tracking-tight uppercase text-sm">SPEAKING</a>
       <a href="#contact"    class="text-slate-500 hover:text-slate-200 transition-colors headline-font tracking-tight uppercase text-sm">CONTACT</a>
     </div>
+    <div class="flex items-center gap-3">
+      <a href="Mihir_Resume.docx" download="Mihir_Shelar_Resume.docx"
+         class="hidden sm:block bg-primary text-on-primary px-5 py-2 text-xs font-bold tracking-widest uppercase rounded-DEFAULT hover:bg-primary-fixed-dim active:opacity-80 active:scale-95 transition-all duration-300">
+        Download CV
+      </a>
+      <!-- Hamburger button (mobile only) -->
+      <button id="menu-toggle" class="md:hidden flex flex-col justify-center items-center w-9 h-9 gap-[5px]" aria-label="Toggle navigation">
+        <span class="w-6 h-[1.5px] bg-slate-300 transition-all duration-300" id="bar1"></span>
+        <span class="w-6 h-[1.5px] bg-slate-300 transition-all duration-300" id="bar2"></span>
+        <span class="w-6 h-[1.5px] bg-slate-300 transition-all duration-300" id="bar3"></span>
+      </button>
+    </div>
+  </div>
+  <!-- Mobile menu -->
+  <div id="mobile-menu" class="hidden md:hidden bg-slate-950/95 backdrop-blur-xl border-t border-slate-800/30 px-4 pb-6 pt-4 flex flex-col gap-4">
+    <a href="#intro"      onclick="closeMobileMenu()" class="text-slate-400 hover:text-slate-100 transition-colors headline-font tracking-widest uppercase text-sm py-2 border-b border-slate-800/30">INTRO</a>
+    <a href="#experience" onclick="closeMobileMenu()" class="text-slate-400 hover:text-slate-100 transition-colors headline-font tracking-widest uppercase text-sm py-2 border-b border-slate-800/30">EXPERIENCE</a>
+    <a href="#skills"     onclick="closeMobileMenu()" class="text-slate-400 hover:text-slate-100 transition-colors headline-font tracking-widest uppercase text-sm py-2 border-b border-slate-800/30">SKILLS</a>
+    <a href="#speaking"   onclick="closeMobileMenu()" class="text-slate-400 hover:text-slate-100 transition-colors headline-font tracking-widest uppercase text-sm py-2 border-b border-slate-800/30">SPEAKING</a>
+    <a href="#contact"    onclick="closeMobileMenu()" class="text-slate-400 hover:text-slate-100 transition-colors headline-font tracking-widest uppercase text-sm py-2 border-b border-slate-800/30">CONTACT</a>
     <a href="Mihir_Resume.docx" download="Mihir_Shelar_Resume.docx"
-       class="bg-primary text-on-primary px-6 py-2 text-sm font-bold tracking-widest uppercase rounded-DEFAULT hover:bg-primary-fixed-dim active:opacity-80 active:scale-95 transition-all duration-300">
+       class="mt-2 bg-primary text-on-primary px-5 py-3 text-xs font-bold tracking-widest uppercase rounded-DEFAULT hover:bg-primary-fixed-dim transition-all text-center">
       Download CV
     </a>
   </div>
 </nav>
+<script>
+  const toggle = document.getElementById('menu-toggle');
+  const menu = document.getElementById('mobile-menu');
+  const bar1 = document.getElementById('bar1');
+  const bar2 = document.getElementById('bar2');
+  const bar3 = document.getElementById('bar3');
+  let open = false;
+  toggle.addEventListener('click', () => {
+    open = !open;
+    menu.classList.toggle('hidden', !open);
+    bar1.style.transform = open ? 'translateY(6.5px) rotate(45deg)' : '';
+    bar2.style.opacity = open ? '0' : '1';
+    bar3.style.transform = open ? 'translateY(-6.5px) rotate(-45deg)' : '';
+  });
+  function closeMobileMenu() {
+    open = false;
+    menu.classList.add('hidden');
+    bar1.style.transform = '';
+    bar2.style.opacity = '1';
+    bar3.style.transform = '';
+  }
+</script>
 
 <!-- ═══════════════════════════════ INTRO ════════════════════════════ -->
 <section id="intro" class="relative min-h-screen pt-24 overflow-hidden flex flex-col items-center justify-center">
@@ -143,7 +185,7 @@
     <div class="absolute right-[15%] top-[75%] w-2 h-2 rounded-full bg-primary/40 -translate-x-1/2 -translate-y-1/2"></div>
   </div>
 
-  <div class="relative z-10 max-w-7xl mx-auto px-8 w-full">
+  <div class="relative z-10 max-w-7xl mx-auto px-4 md:px-8 w-full">
     <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
       <!-- Hero Content -->
       <div class="lg:col-span-8 space-y-10">
@@ -152,9 +194,9 @@
             <span class="w-12 h-[1px] bg-primary"></span>
             Systems Architect &amp; Global Leader
           </div>
-          <h1 class="headline-font text-4xl md:text-5xl lg:text-6xl font-bold tracking-tighter text-on-surface leading-[0.95]">
+          <h1 class="headline-font text-2xl sm:text-3xl md:text-4xl lg:text-6xl font-bold tracking-tighter text-on-surface leading-[0.95]">
             Hi, I'm Mihir.<br/>
-            <span class="text-primary/60 font-light italic text-2xl md:text-3xl lg:text-4xl">Senior Technical Program Manager at Amazon</span>
+            <span class="text-primary/60 font-light italic text-base sm:text-xl md:text-2xl lg:text-4xl">Senior Technical Program Manager at Amazon</span>
           </h1>
           <div class="text-base md:text-lg text-on-surface-variant font-light max-w-3xl leading-relaxed tracking-tight border-l-2 border-primary/20 pl-6 space-y-4">
             <p>I specialize in AI hardware innovation, connected ecosystems, and global product scalability. My career is built on bridging the gap between ambitious product vision and flawless technical execution:</p>
@@ -207,21 +249,21 @@
     </div>
 
     <!-- Stats Row -->
-    <div class="mt-24 grid grid-cols-2 md:grid-cols-4 gap-[1px] bg-outline-variant/20 border border-outline-variant/20 overflow-hidden rounded-xl">
-      <div class="bg-surface-container-low p-8 flex flex-col justify-center items-start space-y-1">
-        <span class="text-primary headline-font text-3xl font-bold">10+</span>
+    <div class="mt-12 md:mt-24 grid grid-cols-2 md:grid-cols-4 gap-[1px] bg-outline-variant/20 border border-outline-variant/20 overflow-hidden rounded-xl">
+      <div class="bg-surface-container-low p-4 md:p-8 flex flex-col justify-center items-start space-y-1">
+        <span class="text-primary headline-font text-xl md:text-3xl font-bold">10+</span>
         <span class="text-[10px] text-on-surface-variant font-bold tracking-widest uppercase">Years Experience</span>
       </div>
-      <div class="bg-surface-container-low p-8 flex flex-col justify-center items-start space-y-1">
-        <span class="text-primary headline-font text-3xl font-bold">10M+</span>
+      <div class="bg-surface-container-low p-4 md:p-8 flex flex-col justify-center items-start space-y-1">
+        <span class="text-primary headline-font text-xl md:text-3xl font-bold">10M+</span>
         <span class="text-[10px] text-on-surface-variant font-bold tracking-widest uppercase">Users Managed</span>
       </div>
-      <div class="bg-surface-container-low p-8 flex flex-col justify-center items-start space-y-1">
-        <span class="text-primary headline-font text-3xl font-bold">3</span>
+      <div class="bg-surface-container-low p-4 md:p-8 flex flex-col justify-center items-start space-y-1">
+        <span class="text-primary headline-font text-xl md:text-3xl font-bold">3</span>
         <span class="text-[10px] text-on-surface-variant font-bold tracking-widest uppercase">Net-New AI Devices</span>
       </div>
-      <div class="bg-surface-container-low p-8 flex flex-col justify-center items-start space-y-1">
-        <span class="text-primary headline-font text-3xl font-bold">$500M+</span>
+      <div class="bg-surface-container-low p-4 md:p-8 flex flex-col justify-center items-start space-y-1">
+        <span class="text-primary headline-font text-xl md:text-3xl font-bold">$500M+</span>
         <span class="text-[10px] text-on-surface-variant font-bold tracking-widest uppercase">YoY Revenue</span>
       </div>
     </div>
@@ -229,11 +271,11 @@
 </section>
 
 <!-- ════════════════════════════ EXPERIENCE ══════════════════════════ -->
-<section id="experience" class="pt-32 pb-24 px-8 max-w-7xl mx-auto">
+<section id="experience" class="pt-32 pb-24 px-4 md:px-8 max-w-7xl mx-auto">
   <header class="mb-24 flex flex-col md:flex-row justify-between items-end gap-8">
     <div class="max-w-2xl">
       <span class="font-label text-xs tracking-[0.3em] uppercase text-primary mb-4 block">Milestones &amp; Growth</span>
-      <h2 class="headline-font text-5xl md:text-7xl font-bold tracking-tighter leading-none mb-6">Work Experience</h2>
+      <h2 class="headline-font text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-bold tracking-tighter leading-none mb-6">Work Experience</h2>
       <p class="text-on-surface-variant font-body text-lg leading-relaxed border-l border-outline-variant pl-6">
         Over a decade of orchestrating complex cloud infrastructures and cross-functional engineering initiatives. Specialized in turning ambiguity into architectural certainty.
       </p>
@@ -247,18 +289,18 @@
   <!-- Timeline -->
   <div class="relative">
     <div class="absolute left-0 md:left-1/2 top-0 bottom-0 w-px bg-outline-variant/30 -translate-x-1/2"></div>
-    <div class="space-y-32">
+    <div class="space-y-16 md:space-y-32">
 
       <!-- Amazon Senior TPM III -->
       <div class="relative grid grid-cols-1 md:grid-cols-2 gap-12 items-start">
         <div class="md:text-right md:pr-16 order-2 md:order-1">
           <div class="inline-block px-3 py-1 bg-secondary-container text-on-secondary-container rounded-full text-[10px] font-bold tracking-widest uppercase mb-4">Current Role</div>
-          <h3 class="headline-font text-3xl font-bold text-primary mb-1">Senior Technical Program Manager III</h3>
+          <h3 class="headline-font text-xl md:text-3xl font-bold text-primary mb-1">Senior Technical Program Manager III</h3>
           <p class="font-label text-sm text-outline mb-4 tracking-wider uppercase">Amazon Corporate LLC</p>
         </div>
         <div class="absolute left-0 md:left-1/2 top-2 w-4 h-4 bg-primary border-4 border-surface -translate-x-1/2 z-10"></div>
         <div class="md:pl-16 order-1 md:order-2">
-          <span class="headline-font text-5xl font-extrabold text-surface-container-highest tracking-tighter block mb-2">2023 — PRES.</span>
+          <span class="headline-font text-2xl md:text-5xl font-extrabold text-surface-container-highest tracking-tighter block mb-2">2023 — PRES.</span>
           <ul class="space-y-4 text-sm text-on-surface">
             <li class="flex items-start gap-3">
               <span class="material-symbols-outlined text-primary text-lg shrink-0 mt-0.5">check_circle</span>
@@ -291,7 +333,7 @@
       <!-- Previous Roles -->
       <div class="relative grid grid-cols-1 md:grid-cols-2 gap-12 items-start">
         <div class="md:pr-16 md:order-1">
-          <span class="headline-font text-5xl font-extrabold text-surface-container-highest tracking-tighter block mb-2">2015 — 2023</span>
+          <span class="headline-font text-2xl md:text-5xl font-extrabold text-surface-container-highest tracking-tighter block mb-2">2015 — 2023</span>
           <ul class="space-y-4 text-sm text-on-surface">
             <li class="flex items-start gap-3">
               <span class="material-symbols-outlined text-primary text-lg shrink-0 mt-0.5">verified</span>
@@ -313,7 +355,7 @@
         </div>
         <div class="absolute left-0 md:left-1/2 top-2 w-4 h-4 bg-surface-variant border-4 border-surface -translate-x-1/2 z-10"></div>
         <div class="md:pl-16 md:text-left order-2 md:order-2">
-          <h3 class="headline-font text-3xl font-bold text-primary mb-1">Previous Roles &amp; Foundational Experience</h3>
+          <h3 class="headline-font text-xl md:text-3xl font-bold text-primary mb-1">Previous Roles &amp; Foundational Experience</h3>
           <p class="font-label text-sm text-outline mb-4 tracking-wider uppercase">Amazon · Hyundai · Zebra / Motorola · NJIT</p>
         </div>
       </div>
@@ -322,18 +364,18 @@
   </div>
 
   <!-- Career Pillars -->
-  <div class="mt-48 grid grid-cols-1 md:grid-cols-3 gap-px bg-outline-variant/20 border border-outline-variant/20">
-    <div class="bg-surface-container-low p-8">
+  <div class="mt-16 md:mt-48 grid grid-cols-1 md:grid-cols-3 gap-px bg-outline-variant/20 border border-outline-variant/20">
+    <div class="bg-surface-container-low p-5 md:p-8">
       <div class="text-primary mb-6"><span class="material-symbols-outlined text-4xl">precision_manufacturing</span></div>
       <h4 class="headline-font text-xl font-bold mb-3 uppercase tracking-tight">Precision Execution</h4>
       <p class="text-sm text-on-surface-variant">Proven track record of managing $50M+ annual budgets and multi-year roadmaps with 99.99% on-time delivery.</p>
     </div>
-    <div class="bg-surface-container-low p-8">
+    <div class="bg-surface-container-low p-5 md:p-8">
       <div class="text-primary mb-6"><span class="material-symbols-outlined text-4xl">architecture</span></div>
       <h4 class="headline-font text-xl font-bold mb-3 uppercase tracking-tight">Systemic Strategy</h4>
       <p class="text-sm text-on-surface-variant">Expertise in socio-technical systems—aligning organizational structures with software architecture.</p>
     </div>
-    <div class="bg-surface-container-low p-8">
+    <div class="bg-surface-container-low p-5 md:p-8">
       <div class="text-primary mb-6"><span class="material-symbols-outlined text-4xl">diversity_3</span></div>
       <h4 class="headline-font text-xl font-bold mb-3 uppercase tracking-tight">High-Stakes Leadership</h4>
       <p class="text-sm text-on-surface-variant">Trusted by C-suite stakeholders to deliver mission-critical infrastructure under extreme pressure.</p>
@@ -342,11 +384,11 @@
 </section>
 
 <!-- ══════════════════════════════ SKILLS ════════════════════════════ -->
-<section id="skills" class="pt-32 pb-24 px-8 max-w-7xl mx-auto min-h-screen">
+<section id="skills" class="pt-32 pb-24 px-4 md:px-8 max-w-7xl mx-auto min-h-screen">
   <header class="mb-20 flex flex-col md:flex-row md:items-end justify-between gap-8">
     <div class="max-w-2xl">
       <span class="text-xs uppercase tracking-[0.3em] text-outline mb-4 block font-label">Capabilities Matrix</span>
-      <h2 class="text-5xl md:text-7xl headline-font font-bold text-on-surface tracking-tighter leading-tight">
+      <h2 class="text-3xl sm:text-4xl md:text-5xl lg:text-7xl headline-font font-bold text-on-surface tracking-tighter leading-tight">
         Technical Architecture<br/><span class="text-primary">&amp; Strategy</span>
       </h2>
     </div>
@@ -362,12 +404,12 @@
       <div class="absolute inset-0 z-0 opacity-20 transition-transform duration-700 group-hover:scale-105"
            style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDwsnClOPDZNfI6LjAbDp4mNGK9_6gdSqLT22IJAZmsxfdp6w7Gt7_dBk-1DDAH4e5k820rZ6fqfaZaJ8DV318SPUO3-F3Z-n--wNfcsyz_LoI2r_oQ4fp8NR6JWVvVWEzHA9BqZBR-z7ABrWy4RWNaOy0x4xOZLFrYRAPJ9Pra_imHPhRxHR_ioMAlbUYhVp_XZlpNnS7Dj9GCMDQPQb-S_ib_ud5nGRxwbpIbYygAE9HYiisMmeYzcSC52FWgrw-3cPC2wgx2rQWd'); background-size: cover; background-position: center;"></div>
       <div class="absolute inset-0 bg-gradient-to-t from-surface-container via-surface-container/60 to-transparent z-10"></div>
-      <div class="relative z-20 h-full p-10 flex flex-col justify-end">
+      <div class="relative z-20 h-full p-5 md:p-10 flex flex-col justify-end">
         <div class="flex items-center gap-3 mb-4">
           <span class="material-symbols-outlined text-primary">memory</span>
           <span class="text-xs font-label tracking-widest uppercase text-outline">Compute Infrastructure</span>
         </div>
-        <h3 class="text-3xl headline-font font-bold mb-4">AI Hardware Ecosystems</h3>
+        <h3 class="text-xl md:text-3xl headline-font font-bold mb-4">AI Hardware Ecosystems</h3>
         <p class="text-on-surface-variant max-w-lg mb-6 leading-relaxed">
           End-to-end management of GPU clusters and TPU architectures. Specialized in H100 deployment strategies, thermal management at scale, and interconnect optimization (NVLink/InfiniBand).
         </p>
@@ -380,7 +422,7 @@
     </div>
 
     <!-- Cloud Ecosystems (Tall Card alongside AI Hardware) -->
-    <div class="md:col-span-4 min-h-[480px] bg-surface-container-high rounded-lg p-8 border border-outline-variant/10 flex flex-col">
+    <div class="md:col-span-4 min-h-[480px] bg-surface-container-high rounded-lg p-5 md:p-8 border border-outline-variant/10 flex flex-col">
       <div class="mb-10">
         <span class="material-symbols-outlined text-primary text-4xl mb-6">cloud_done</span>
         <h3 class="text-2xl headline-font font-bold mb-4">Cloud Ecosystems</h3>
@@ -419,12 +461,12 @@
     </div>
 
     <!-- Executive Leadership -->
-    <div class="md:col-span-8 rounded-lg bg-surface-container border border-outline-variant/10 p-10 flex flex-col justify-center">
+    <div class="md:col-span-8 rounded-lg bg-surface-container border border-outline-variant/10 p-5 md:p-10 flex flex-col justify-center">
       <div class="flex items-center gap-3 mb-6">
         <span class="material-symbols-outlined text-primary">account_tree</span>
         <span class="text-xs font-label tracking-widest uppercase text-outline">Leadership</span>
       </div>
-      <h3 class="text-3xl headline-font font-bold mb-6">Executive Leadership &amp; Strategy</h3>
+      <h3 class="text-xl md:text-3xl headline-font font-bold mb-6">Executive Leadership &amp; Strategy</h3>
       <div class="flex flex-wrap gap-3">
         <span class="px-4 py-2 rounded bg-surface-container-highest text-on-surface text-sm border border-outline-variant/20">Single-Threaded Ownership (STO)</span>
         <span class="px-4 py-2 rounded bg-surface-container-highest text-on-surface text-sm border border-outline-variant/20">Global Product Roadmapping</span>
@@ -440,7 +482,7 @@
     </div>
 
     <!-- Quality Engineering -->
-    <div class="md:col-span-4 bg-surface-container-lowest rounded-lg p-8 border border-outline-variant/20 group hover:border-primary/40 transition-colors">
+    <div class="md:col-span-4 bg-surface-container-lowest rounded-lg p-5 md:p-8 border border-outline-variant/20 group hover:border-primary/40 transition-colors">
       <div class="flex justify-between items-start mb-6">
         <span class="material-symbols-outlined text-primary">fact_check</span>
         <span class="text-[10px] font-mono text-outline px-2 py-1 border border-outline-variant/30">VALIDATION</span>
@@ -467,7 +509,7 @@
     </div>
 
     <!-- Software Engineering -->
-    <div class="md:col-span-4 bg-surface-container-lowest rounded-lg p-8 border border-outline-variant/20 group hover:border-primary/40 transition-colors">
+    <div class="md:col-span-4 bg-surface-container-lowest rounded-lg p-5 md:p-8 border border-outline-variant/20 group hover:border-primary/40 transition-colors">
       <div class="flex justify-between items-start mb-6">
         <span class="material-symbols-outlined text-primary">code</span>
         <span class="text-[10px] font-mono text-outline px-2 py-1 border border-outline-variant/30">DEVELOPMENT</span>
@@ -490,7 +532,7 @@
     </div>
 
     <!-- Hardware Ecosystems -->
-    <div class="md:col-span-8 bg-surface-container-low rounded-lg border border-outline-variant/10 p-8 flex flex-col justify-center">
+    <div class="md:col-span-8 bg-surface-container-low rounded-lg border border-outline-variant/10 p-5 md:p-8 flex flex-col justify-center">
       <div class="flex items-center gap-3 mb-6">
         <span class="material-symbols-outlined text-primary">devices</span>
         <span class="text-xs font-label tracking-widest uppercase text-outline">Devices</span>
@@ -509,7 +551,7 @@
     </div>
 
     <!-- Agile & STO -->
-    <div class="md:col-span-4 bg-surface-container-lowest rounded-lg p-8 border border-outline-variant/20 group hover:border-primary/40 transition-colors">
+    <div class="md:col-span-4 bg-surface-container-lowest rounded-lg p-5 md:p-8 border border-outline-variant/20 group hover:border-primary/40 transition-colors">
       <div class="flex justify-between items-start mb-6">
         <span class="material-symbols-outlined text-primary">account_tree</span>
         <span class="text-[10px] font-mono text-outline px-2 py-1 border border-outline-variant/30">SYSTEMS</span>
@@ -522,9 +564,9 @@
 
     <!-- Data-Driven Delivery -->
     <div class="md:col-span-8 bg-surface-container-low rounded-lg border border-outline-variant/10 overflow-hidden flex flex-col md:flex-row">
-      <div class="p-8 md:w-1/2 flex flex-col justify-center">
+      <div class="p-5 md:p-8 md:w-1/2 flex flex-col justify-center">
         <span class="text-xs font-label tracking-widest uppercase text-primary mb-4 block">Process Optimization</span>
-        <h3 class="text-2xl headline-font font-bold mb-4">Data-Driven Delivery</h3>
+        <h3 class="text-xl md:text-2xl headline-font font-bold mb-4">Data-Driven Delivery</h3>
         <p class="text-sm text-on-surface-variant leading-relaxed">
           Implementing DORA metrics and predictive analytics to identify delivery bottlenecks before they impact the critical path. 10/10 OTA releases delivered on time.
         </p>
@@ -545,53 +587,53 @@
 </section>
 
 <!-- ══════════════════════════════ SPEAKING ══════════════════════════ -->
-<section id="speaking" class="pt-32 pb-24 px-8 max-w-7xl mx-auto">
-  <div class="mb-32 grid md:grid-cols-12 gap-8 items-end">
+<section id="speaking" class="pt-32 pb-24 px-4 md:px-8 max-w-7xl mx-auto">
+  <div class="mb-16 md:mb-32 grid md:grid-cols-12 gap-8 items-end">
     <div class="md:col-span-8">
       <span class="text-xs uppercase tracking-[0.3em] text-primary mb-4 block font-medium">Industry Contribution</span>
-      <h2 class="text-6xl md:text-8xl headline-font font-bold leading-none tracking-tighter text-on-surface mb-8">
+      <h2 class="text-3xl sm:text-4xl md:text-6xl lg:text-8xl headline-font font-bold leading-none tracking-tighter text-on-surface mb-8">
         Speaking &amp;<br/>Mentorship
       </h2>
-      <p class="text-xl text-on-surface-variant max-w-2xl leading-relaxed">
+      <p class="text-base md:text-xl text-on-surface-variant max-w-2xl leading-relaxed">
         Bridging the gap between architectural theory and operational reality through global stages and high-impact mentorship.
       </p>
     </div>
   </div>
 
   <!-- Speaking Engagements -->
-  <div class="mb-32">
+  <div class="mb-16 md:mb-32">
     <div class="flex items-center gap-4 mb-12">
       <h3 class="text-3xl headline-font font-bold tracking-tight">Speaking Engagements</h3>
       <div class="h-[1px] flex-grow bg-outline-variant/30"></div>
     </div>
     <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-      <div class="md:col-span-2 bg-surface-container-low p-8 rounded-lg border border-outline-variant/10 flex flex-col justify-between hover:bg-surface-container transition-colors group">
+      <div class="md:col-span-2 bg-surface-container-low p-5 md:p-8 rounded-lg border border-outline-variant/10 flex flex-col justify-between hover:bg-surface-container transition-colors group">
         <div>
           <div class="flex justify-between items-start mb-6">
             <span class="material-symbols-outlined text-primary text-4xl">podium</span>
             <span class="text-xs font-mono text-outline uppercase tracking-widest">Keynote</span>
           </div>
-          <h4 class="text-4xl headline-font font-bold mb-4 group-hover:text-primary transition-colors">From Prototype to 10M Users</h4>
+          <h4 class="text-2xl md:text-4xl headline-font font-bold mb-4 group-hover:text-primary transition-colors">From Prototype to 10M Users</h4>
           <p class="text-on-surface-variant text-lg leading-relaxed max-w-xl">
             A deep dive into the operational scaling bottlenecks that kill high-growth products. This session explores technical debt management, infrastructure elasticity, and the TPM's role in hyper-growth transitions.
           </p>
         </div>
       </div>
-      <div class="bg-surface-container-highest p-8 rounded-lg border border-outline-variant/10 flex flex-col justify-between">
+      <div class="bg-surface-container-highest p-5 md:p-8 rounded-lg border border-outline-variant/10 flex flex-col justify-between">
         <div>
           <span class="text-xs font-mono text-primary uppercase tracking-widest mb-4 block">Workshop</span>
           <h4 class="text-2xl headline-font font-bold mb-4">Engineering Velocity</h4>
           <p class="text-sm text-on-surface-variant leading-relaxed">Practical frameworks for reducing cycle time without compromising architectural integrity.</p>
         </div>
       </div>
-      <div class="bg-surface-container-low p-8 rounded-lg border border-outline-variant/10 flex flex-col justify-between hover:border-primary/30 transition-all">
+      <div class="bg-surface-container-low p-5 md:p-8 rounded-lg border border-outline-variant/10 flex flex-col justify-between hover:border-primary/30 transition-all">
         <div>
           <span class="text-xs font-mono text-primary uppercase tracking-widest mb-4 block">Panel Discussion</span>
           <h4 class="text-2xl headline-font font-bold mb-4">The Future of AI in SDLC</h4>
           <p class="text-sm text-on-surface-variant leading-relaxed">Discussing the integration of LLMs into technical program management workflows.</p>
         </div>
       </div>
-      <div class="md:col-span-2 bg-gradient-to-br from-surface-container-low to-surface-container-lowest p-8 rounded-lg border border-outline-variant/10 relative overflow-hidden">
+      <div class="md:col-span-2 bg-gradient-to-br from-surface-container-low to-surface-container-lowest p-5 md:p-8 rounded-lg border border-outline-variant/10 relative overflow-hidden">
         <h4 class="text-2xl headline-font font-bold mb-6">Mentorship &amp; Incubators</h4>
         <div class="grid md:grid-cols-2 gap-8">
           <p class="text-lg text-on-surface-variant leading-relaxed italic border-l-2 border-primary pl-6">
@@ -622,14 +664,14 @@
   <div class="absolute inset-0 architectural-grid opacity-40 pointer-events-none"></div>
   <div class="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-l from-surface-container-low/20 to-transparent pointer-events-none"></div>
 
-  <div class="relative max-w-7xl mx-auto px-8 grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-24">
+  <div class="relative max-w-7xl mx-auto px-4 md:px-8 grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-24">
     <!-- Left -->
     <div class="lg:col-span-5 flex flex-col justify-start">
       <div class="inline-flex items-center gap-2 mb-6">
         <div class="w-12 h-[1px] bg-outline-variant/50"></div>
         <span class="text-xs uppercase tracking-[0.3em] text-primary font-medium">Get In Touch</span>
       </div>
-      <h2 class="text-5xl lg:text-7xl headline-font font-bold text-on-surface leading-tight tracking-tighter mb-8">
+      <h2 class="text-3xl md:text-5xl lg:text-7xl headline-font font-bold text-on-surface leading-tight tracking-tighter mb-8">
         Let's Architect<br/><span class="text-outline">the Future.</span>
       </h2>
       <p class="text-xl text-on-surface-variant font-light leading-relaxed mb-12 max-w-md">
@@ -638,7 +680,7 @@
       <div class="space-y-8 mt-auto">
         <div>
           <p class="text-[10px] uppercase tracking-widest text-outline mb-2">Direct Channel</p>
-          <a href="mailto:mihirshelar@gmail.com" class="text-xl headline-font text-on-surface hover:text-primary transition-colors flex items-center gap-3">
+          <a href="mailto:mihirshelar@gmail.com" class="text-base md:text-xl headline-font text-on-surface hover:text-primary transition-colors flex items-center gap-3 break-all">
             mihirshelar@gmail.com
             <span class="material-symbols-outlined text-sm">arrow_outward</span>
           </a>
@@ -663,7 +705,7 @@
 
     <!-- Right: Form -->
     <div class="lg:col-span-7">
-      <div class="bg-surface-container-low p-8 lg:p-12 rounded-lg border border-outline-variant/10 relative overflow-hidden">
+      <div class="bg-surface-container-low p-5 md:p-8 lg:p-12 rounded-lg border border-outline-variant/10 relative overflow-hidden">
         <div class="absolute -top-24 -right-24 w-64 h-64 bg-primary/5 blur-[100px] rounded-full"></div>
         <form class="relative z-10 space-y-10"
               action="https://formsubmit.co/mihirshelar@gmail.com"
@@ -722,7 +764,7 @@
 </section>
 
 <!-- ═══════════════════════════════ FOOTER ═══════════════════════════ -->
-<footer class="bg-slate-950 w-full py-12 px-8 border-t border-slate-900 mt-8">
+<footer class="bg-slate-950 w-full py-12 px-4 md:px-8 border-t border-slate-900 mt-8">
   <div class="flex flex-col md:flex-row justify-between items-center gap-6 max-w-7xl mx-auto">
     <div class="text-lg font-black text-slate-200 headline-font uppercase tracking-tighter">M.SHELAR</div>
     <p class="text-slate-400 text-xs tracking-widest uppercase text-center md:text-left">
