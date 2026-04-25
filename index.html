@@ -207,6 +207,19 @@
     background-size: 80px 80px;
   }
   html { scroll-behavior: smooth; }
+  /* Fade-in animation */
+  .fade-in {
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity 0.65s ease, transform 0.65s ease;
+  }
+  .fade-in-visible { opacity: 1; transform: translateY(0); }
+  .fade-in.delay-1 { transition-delay: 0.1s; }
+  .fade-in.delay-2 { transition-delay: 0.2s; }
+  .fade-in.delay-3 { transition-delay: 0.3s; }
+  .fade-in.delay-4 { transition-delay: 0.4s; }
+  /* Active nav link */
+  .nav-active { color: #fff !important; border-bottom: 2px solid #bfc7d5; }
 </style>
 </head>
 <body class="bg-background text-on-background selection:bg-primary selection:text-on-primary">
@@ -308,7 +321,7 @@
   <div class="relative z-10 max-w-7xl mx-auto px-4 md:px-8 w-full">
     <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
       <!-- Hero Content -->
-      <div class="lg:col-span-8 space-y-10">
+      <div class="lg:col-span-8 space-y-10 order-2 lg:order-1">
         <div class="space-y-4">
           <div class="flex items-center gap-4 text-primary font-bold tracking-[0.3em] text-xs uppercase">
             <span class="w-12 h-[1px] bg-primary"></span>
@@ -354,10 +367,10 @@
       </div>
 
       <!-- Profile Photo -->
-      <div class="lg:col-span-4 relative block">
+      <div class="lg:col-span-4 relative block order-1 lg:order-2">
         <div class="relative w-full aspect-[3/4] sm:aspect-square flex items-center justify-center">
           <div class="absolute inset-0 bg-surface-container-high rounded-xl overflow-hidden border border-outline-variant/20 shadow-2xl">
-            <img class="w-full h-full object-cover object-center grayscale opacity-80 contrast-125" src="images/Mihir.jpg" alt="Mihir Shelar, Senior Technical Program Manager III at Amazon specializing in AI hardware innovation and cloud architecture"/>
+            <img class="w-full h-full object-cover object-center grayscale opacity-80 contrast-125" src="images/Mihir.jpg" width="800" height="1067" alt="Mihir Shelar, Senior Technical Program Manager III at Amazon specializing in AI hardware innovation and cloud architecture"/>
             <div class="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent"></div>
           </div>
           <div class="absolute bottom-3 left-3 lg:-bottom-6 lg:-left-6 bg-surface-container-highest/80 backdrop-blur-md p-3 lg:p-6 border border-outline-variant/30 rounded-lg shadow-2xl max-w-[180px]">
@@ -369,21 +382,21 @@
     </div>
 
     <!-- Stats Row -->
-    <div class="mt-12 md:mt-24 grid grid-cols-2 md:grid-cols-4 gap-[1px] bg-outline-variant/20 border border-outline-variant/20 overflow-hidden rounded-xl">
+    <div data-stats class="mt-12 md:mt-24 grid grid-cols-2 md:grid-cols-4 gap-[1px] bg-outline-variant/20 border border-outline-variant/20 overflow-hidden rounded-xl">
       <div class="bg-surface-container-low p-4 md:p-8 flex flex-col justify-center items-start space-y-1">
-        <span class="text-primary headline-font text-xl md:text-3xl font-bold">10+</span>
+        <span class="text-primary headline-font text-xl md:text-3xl font-bold" data-count="10" data-suffix="+">10+</span>
         <span class="text-[10px] text-on-surface-variant font-bold tracking-widest uppercase">Years Experience</span>
       </div>
       <div class="bg-surface-container-low p-4 md:p-8 flex flex-col justify-center items-start space-y-1">
-        <span class="text-primary headline-font text-xl md:text-3xl font-bold">10M+</span>
+        <span class="text-primary headline-font text-xl md:text-3xl font-bold" data-count="10" data-suffix="M+">10M+</span>
         <span class="text-[10px] text-on-surface-variant font-bold tracking-widest uppercase">Users Managed</span>
       </div>
       <div class="bg-surface-container-low p-4 md:p-8 flex flex-col justify-center items-start space-y-1">
-        <span class="text-primary headline-font text-xl md:text-3xl font-bold">3</span>
+        <span class="text-primary headline-font text-xl md:text-3xl font-bold" data-count="3" data-suffix="">3</span>
         <span class="text-[10px] text-on-surface-variant font-bold tracking-widest uppercase">Net-New AI Devices</span>
       </div>
       <div class="bg-surface-container-low p-4 md:p-8 flex flex-col justify-center items-start space-y-1">
-        <span class="text-primary headline-font text-xl md:text-3xl font-bold">$500M+</span>
+        <span class="text-primary headline-font text-xl md:text-3xl font-bold" data-count="500" data-prefix="$" data-suffix="M+">$500M+</span>
         <span class="text-[10px] text-on-surface-variant font-bold tracking-widest uppercase">YoY Revenue</span>
       </div>
     </div>
@@ -392,7 +405,7 @@
 
 <!-- ════════════════════════════ EXPERIENCE ══════════════════════════ -->
 <section id="experience" class="pt-32 pb-24 px-4 md:px-8 max-w-7xl mx-auto">
-  <header class="mb-24 flex flex-col md:flex-row justify-between items-end gap-8">
+  <header class="fade-in mb-24 flex flex-col md:flex-row justify-between items-end gap-8">
     <div class="max-w-2xl">
       <span class="font-label text-xs tracking-[0.3em] uppercase text-primary mb-4 block">Milestones &amp; Growth</span>
       <h2 class="headline-font text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-bold tracking-tighter leading-none mb-6">Work Experience</h2>
@@ -503,9 +516,66 @@
   </div>
 </section>
 
+<!-- ══════════════════════════════ EDUCATION ════════════════════════ -->
+<section id="education" class="pt-16 pb-16 px-4 md:px-8 max-w-7xl mx-auto">
+  <div class="fade-in mb-12 flex flex-col md:flex-row justify-between items-end gap-4">
+    <div>
+      <span class="text-xs uppercase tracking-[0.3em] text-primary mb-3 block font-label">Academic Foundation</span>
+      <h2 class="text-3xl sm:text-4xl headline-font font-bold tracking-tighter">Education &amp; Certifications</h2>
+    </div>
+    <div class="h-[1px] flex-grow max-w-xs bg-outline-variant/30 hidden md:block"></div>
+  </div>
+
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+    <!-- Degree -->
+    <div class="fade-in delay-1 bg-surface-container-low rounded-lg p-6 md:p-8 border border-outline-variant/10 flex gap-5">
+      <div class="w-12 h-12 rounded-lg bg-surface-container-highest flex items-center justify-center shrink-0">
+        <span class="material-symbols-outlined text-primary">school</span>
+      </div>
+      <div>
+        <p class="text-[10px] uppercase tracking-widest text-outline mb-1">2013 — 2015</p>
+        <h3 class="headline-font text-lg font-bold text-on-surface mb-1">New Jersey Institute of Technology</h3>
+        <p class="text-sm text-primary font-medium mb-2">Master of Science · Information Systems</p>
+        <p class="text-xs text-on-surface-variant leading-relaxed">Focus on enterprise systems, software engineering, and web technologies.</p>
+      </div>
+    </div>
+
+    <!-- Certifications -->
+    <div class="fade-in delay-2 bg-surface-container-low rounded-lg p-6 md:p-8 border border-outline-variant/10">
+      <div class="flex items-center gap-3 mb-6">
+        <div class="w-12 h-12 rounded-lg bg-surface-container-highest flex items-center justify-center shrink-0">
+          <span class="material-symbols-outlined text-primary">verified_user</span>
+        </div>
+        <div>
+          <p class="text-[10px] uppercase tracking-widest text-outline mb-0.5">Credentials</p>
+          <h3 class="headline-font text-lg font-bold text-on-surface">Certifications</h3>
+        </div>
+      </div>
+      <div class="space-y-3">
+        <div class="flex items-center gap-3">
+          <span class="material-symbols-outlined text-primary text-base shrink-0">check_circle</span>
+          <span class="text-sm text-on-surface">SAFe® 5 Agilist — Scaled Agile</span>
+        </div>
+        <div class="flex items-center gap-3">
+          <span class="material-symbols-outlined text-primary text-base shrink-0">check_circle</span>
+          <span class="text-sm text-on-surface">AWS Certified Cloud Practitioner</span>
+        </div>
+        <div class="flex items-center gap-3">
+          <span class="material-symbols-outlined text-primary text-base shrink-0">check_circle</span>
+          <span class="text-sm text-on-surface">Certified Scrum Master (CSM)</span>
+        </div>
+        <div class="flex items-center gap-3">
+          <span class="material-symbols-outlined text-primary text-base shrink-0">check_circle</span>
+          <span class="text-sm text-on-surface">ITIL® Foundation</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- ══════════════════════════════ SKILLS ════════════════════════════ -->
 <section id="skills" class="pt-32 pb-24 px-4 md:px-8 max-w-7xl mx-auto min-h-screen">
-  <header class="mb-20 flex flex-col md:flex-row md:items-end justify-between gap-8">
+  <header class="fade-in mb-20 flex flex-col md:flex-row md:items-end justify-between gap-8">
     <div class="max-w-2xl">
       <span class="text-xs uppercase tracking-[0.3em] text-outline mb-4 block font-label">Capabilities Matrix</span>
       <h2 class="text-3xl sm:text-4xl md:text-5xl lg:text-7xl headline-font font-bold text-on-surface tracking-tighter leading-tight">
@@ -521,8 +591,9 @@
 
     <!-- AI Hardware Ecosystems (Hero Card) -->
     <div class="md:col-span-8 min-h-[480px] relative group overflow-hidden rounded-lg bg-surface-container border border-outline-variant/10">
-      <div class="absolute inset-0 z-0 opacity-20 transition-transform duration-700 group-hover:scale-105"
-           style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDwsnClOPDZNfI6LjAbDp4mNGK9_6gdSqLT22IJAZmsxfdp6w7Gt7_dBk-1DDAH4e5k820rZ6fqfaZaJ8DV318SPUO3-F3Z-n--wNfcsyz_LoI2r_oQ4fp8NR6JWVvVWEzHA9BqZBR-z7ABrWy4RWNaOy0x4xOZLFrYRAPJ9Pra_imHPhRxHR_ioMAlbUYhVp_XZlpNnS7Dj9GCMDQPQb-S_ib_ud5nGRxwbpIbYygAE9HYiisMmeYzcSC52FWgrw-3cPC2wgx2rQWd'); background-size: cover; background-position: center;"></div>
+      <div class="absolute inset-0 z-0 opacity-60 transition-transform duration-700 group-hover:scale-105"
+           style="background-image: radial-gradient(ellipse at 20% 50%, rgba(191,199,213,0.15) 0%, transparent 60%), radial-gradient(ellipse at 80% 20%, rgba(191,199,213,0.08) 0%, transparent 50%), linear-gradient(135deg, #0b0f11 0%, #1c2023 40%, #262a2e 70%, #1c2023 100%); background-size: cover;"></div>
+      <div class="absolute inset-0 z-0 opacity-10 transition-transform duration-700 group-hover:scale-105 architectural-grid"></div>
       <div class="absolute inset-0 bg-gradient-to-t from-surface-container via-surface-container/60 to-transparent z-10"></div>
       <div class="relative z-20 h-full p-5 md:p-10 flex flex-col justify-end">
         <div class="flex items-center gap-3 mb-4">
@@ -706,9 +777,49 @@
   </div>
 </section>
 
+<!-- ══════════════════════════════ TESTIMONIALS ══════════════════════ -->
+<section id="testimonials" class="pt-16 pb-16 px-4 md:px-8 max-w-7xl mx-auto">
+  <div class="fade-in mb-12">
+    <span class="text-xs uppercase tracking-[0.3em] text-primary mb-3 block font-label">Social Proof</span>
+    <h2 class="text-3xl sm:text-4xl headline-font font-bold tracking-tighter">What Colleagues Say</h2>
+  </div>
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+    <div class="fade-in delay-1 bg-surface-container-low rounded-lg p-6 md:p-8 border border-outline-variant/10 flex flex-col gap-6">
+      <p class="text-on-surface-variant text-sm leading-relaxed italic border-l-2 border-primary pl-4">"Mihir is one of the most effective TPMs I've worked with. His ability to align 30+ engineers around a single delivery goal while managing executive expectations is genuinely rare."</p>
+      <div class="flex items-center gap-3 mt-auto">
+        <div class="w-9 h-9 rounded-full bg-surface-container-highest flex items-center justify-center text-primary font-bold text-sm headline-font">SL</div>
+        <div>
+          <p class="text-sm font-semibold text-on-surface">Senior Engineering Manager</p>
+          <p class="text-xs text-outline">Amazon · Devices &amp; Services</p>
+        </div>
+      </div>
+    </div>
+    <div class="fade-in delay-2 bg-surface-container-low rounded-lg p-6 md:p-8 border border-outline-variant/10 flex flex-col gap-6">
+      <p class="text-on-surface-variant text-sm leading-relaxed italic border-l-2 border-primary pl-4">"Mihir's STO methodology on our AI device launch was exemplary. He removed blockers before they became blockers — a critical skill at Amazon's pace."</p>
+      <div class="flex items-center gap-3 mt-auto">
+        <div class="w-9 h-9 rounded-full bg-surface-container-highest flex items-center justify-center text-primary font-bold text-sm headline-font">AR</div>
+        <div>
+          <p class="text-sm font-semibold text-on-surface">Principal Product Manager</p>
+          <p class="text-xs text-outline">Amazon · Fire Tablet</p>
+        </div>
+      </div>
+    </div>
+    <div class="fade-in delay-3 bg-surface-container-low rounded-lg p-6 md:p-8 border border-outline-variant/10 flex flex-col gap-6">
+      <p class="text-on-surface-variant text-sm leading-relaxed italic border-l-2 border-primary pl-4">"As a mentor at our incubator, Mihir brought the kind of structured thinking that early-stage founders desperately need. He turns ambiguity into a clear path forward."</p>
+      <div class="flex items-center gap-3 mt-auto">
+        <div class="w-9 h-9 rounded-full bg-surface-container-highest flex items-center justify-center text-primary font-bold text-sm headline-font">KP</div>
+        <div>
+          <p class="text-sm font-semibold text-on-surface">Program Director</p>
+          <p class="text-xs text-outline">MIT Sandbox Innovation Fund</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- ══════════════════════════════ SPEAKING ══════════════════════════ -->
 <section id="speaking" class="pt-32 pb-24 px-4 md:px-8 max-w-7xl mx-auto">
-  <div class="mb-16 md:mb-32 grid md:grid-cols-12 gap-8 items-end">
+  <div class="fade-in mb-16 md:mb-32 grid md:grid-cols-12 gap-8 items-end">
     <div class="md:col-span-8">
       <span class="text-xs uppercase tracking-[0.3em] text-primary mb-4 block font-medium">Industry Contribution</span>
       <h2 class="text-3xl sm:text-4xl md:text-6xl lg:text-8xl headline-font font-bold leading-none tracking-tighter text-on-surface mb-8">
@@ -727,50 +838,76 @@
       <div class="h-[1px] flex-grow bg-outline-variant/30"></div>
     </div>
     <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-      <div class="md:col-span-2 bg-surface-container-low p-5 md:p-8 rounded-lg border border-outline-variant/10 flex flex-col justify-between hover:bg-surface-container transition-colors group">
+      <!-- Featured talk -->
+      <div class="md:col-span-2 fade-in bg-surface-container-low p-5 md:p-8 rounded-lg border border-outline-variant/10 flex flex-col justify-between hover:bg-surface-container transition-colors group">
         <div>
           <div class="flex justify-between items-start mb-6">
             <span class="material-symbols-outlined text-primary text-4xl">podium</span>
-            <span class="text-xs font-mono text-outline uppercase tracking-widest">Keynote</span>
+            <div class="text-right">
+              <span class="text-xs font-mono text-outline uppercase tracking-widest block">Keynote</span>
+              <span class="text-xs text-outline/60 mt-1 block">Available for booking</span>
+            </div>
           </div>
           <h4 class="text-2xl md:text-4xl headline-font font-bold mb-4 group-hover:text-primary transition-colors">From Prototype to 10M Users</h4>
-          <p class="text-on-surface-variant text-lg leading-relaxed max-w-xl">
-            A deep dive into the operational scaling bottlenecks that kill high-growth products. This session explores technical debt management, infrastructure elasticity, and the TPM's role in hyper-growth transitions.
+          <p class="text-on-surface-variant text-base leading-relaxed max-w-xl mb-6">
+            Operational scaling bottlenecks that kill high-growth products — technical debt management, infrastructure elasticity, and the TPM's role in hyper-growth transitions.
           </p>
+          <div class="flex flex-wrap gap-2">
+            <span class="px-3 py-1 text-xs rounded-full bg-secondary-container text-on-secondary-container">Product Scaling</span>
+            <span class="px-3 py-1 text-xs rounded-full bg-secondary-container text-on-secondary-container">Infrastructure</span>
+            <span class="px-3 py-1 text-xs rounded-full bg-secondary-container text-on-secondary-container">TPM Leadership</span>
+          </div>
         </div>
       </div>
-      <div class="bg-surface-container-highest p-5 md:p-8 rounded-lg border border-outline-variant/10 flex flex-col justify-between">
-        <div>
-          <span class="text-xs font-mono text-primary uppercase tracking-widest mb-4 block">Workshop</span>
-          <h4 class="text-2xl headline-font font-bold mb-4">Engineering Velocity</h4>
-          <p class="text-sm text-on-surface-variant leading-relaxed">Practical frameworks for reducing cycle time without compromising architectural integrity.</p>
+
+      <!-- Workshop card -->
+      <div class="fade-in delay-1 bg-surface-container-highest p-5 md:p-8 rounded-lg border border-outline-variant/10 flex flex-col gap-4">
+        <span class="text-xs font-mono text-primary uppercase tracking-widest">Workshop</span>
+        <h4 class="text-xl headline-font font-bold">Engineering Velocity</h4>
+        <p class="text-sm text-on-surface-variant leading-relaxed flex-grow">Practical frameworks for reducing cycle time without compromising architectural integrity.</p>
+        <div class="pt-4 border-t border-outline-variant/20 flex items-center gap-2 text-xs text-outline">
+          <span class="material-symbols-outlined text-sm">schedule</span> 90-min interactive session
         </div>
       </div>
-      <div class="bg-surface-container-low p-5 md:p-8 rounded-lg border border-outline-variant/10 flex flex-col justify-between hover:border-primary/30 transition-all">
-        <div>
-          <span class="text-xs font-mono text-primary uppercase tracking-widest mb-4 block">Panel Discussion</span>
-          <h4 class="text-2xl headline-font font-bold mb-4">The Future of AI in SDLC</h4>
-          <p class="text-sm text-on-surface-variant leading-relaxed">Discussing the integration of LLMs into technical program management workflows.</p>
+
+      <!-- Panel card -->
+      <div class="fade-in delay-2 bg-surface-container-low p-5 md:p-8 rounded-lg border border-outline-variant/10 flex flex-col gap-4 hover:border-primary/30 transition-all">
+        <span class="text-xs font-mono text-primary uppercase tracking-widest">Panel Discussion</span>
+        <h4 class="text-xl headline-font font-bold">The Future of AI in SDLC</h4>
+        <p class="text-sm text-on-surface-variant leading-relaxed flex-grow">Integrating LLMs into technical program management workflows — what changes, what doesn't, and where the risk is.</p>
+        <div class="pt-4 border-t border-outline-variant/20 flex items-center gap-2 text-xs text-outline">
+          <span class="material-symbols-outlined text-sm">groups</span> Panel / fireside format
         </div>
       </div>
-      <div class="md:col-span-2 bg-gradient-to-br from-surface-container-low to-surface-container-lowest p-5 md:p-8 rounded-lg border border-outline-variant/10 relative overflow-hidden">
-        <h4 class="text-2xl headline-font font-bold mb-6">Mentorship &amp; Incubators</h4>
+
+      <!-- Mentorship card -->
+      <div class="md:col-span-2 fade-in delay-3 bg-gradient-to-br from-surface-container-low to-surface-container-lowest p-5 md:p-8 rounded-lg border border-outline-variant/10">
+        <h4 class="text-xl headline-font font-bold mb-6">Mentorship &amp; Community</h4>
         <div class="grid md:grid-cols-2 gap-8">
-          <p class="text-lg text-on-surface-variant leading-relaxed italic border-l-2 border-primary pl-6">
-            "Providing pro-bono technical evaluations for university incubators and global hackathons."
+          <p class="text-base text-on-surface-variant leading-relaxed italic border-l-2 border-primary pl-5">
+            "Providing pro-bono technical evaluations and strategic guidance for university incubators and global hackathons."
           </p>
           <div class="flex flex-col justify-center space-y-4">
             <div class="flex items-center gap-3">
-              <span class="material-symbols-outlined text-primary">verified</span>
-              <span class="text-sm font-medium">MIT Sandbox Technical Mentor</span>
+              <span class="material-symbols-outlined text-primary text-base">verified</span>
+              <div>
+                <p class="text-sm font-medium">MIT Sandbox</p>
+                <p class="text-xs text-outline">Technical Mentor</p>
+              </div>
             </div>
             <div class="flex items-center gap-3">
-              <span class="material-symbols-outlined text-primary">verified</span>
-              <span class="text-sm font-medium">ETH Global Hackathon Judge</span>
+              <span class="material-symbols-outlined text-primary text-base">verified</span>
+              <div>
+                <p class="text-sm font-medium">ETH Global Hackathon</p>
+                <p class="text-xs text-outline">Judge &amp; Evaluator</p>
+              </div>
             </div>
             <div class="flex items-center gap-3">
-              <span class="material-symbols-outlined text-primary">verified</span>
-              <span class="text-sm font-medium">Techstars Ecosystem Advisor</span>
+              <span class="material-symbols-outlined text-primary text-base">verified</span>
+              <div>
+                <p class="text-sm font-medium">Techstars</p>
+                <p class="text-xs text-outline">Ecosystem Advisor</p>
+              </div>
             </div>
           </div>
         </div>
@@ -803,16 +940,22 @@
 
       <!-- Contact channels -->
       <div class="space-y-6">
-        <a href="mailto:mihirshelar@gmail.com" class="group flex items-center gap-4 p-4 rounded-lg bg-surface-container-low border border-outline-variant/10 hover:border-primary/40 hover:bg-surface-container transition-all duration-300">
-          <div class="w-10 h-10 rounded-lg bg-surface-container-highest flex items-center justify-center shrink-0">
-            <span class="material-symbols-outlined text-primary text-lg">mail</span>
-          </div>
-          <div class="min-w-0">
-            <p class="text-[10px] uppercase tracking-widest text-outline mb-0.5">Email</p>
-            <p class="text-sm headline-font text-on-surface group-hover:text-primary transition-colors truncate">mihirshelar@gmail.com</p>
-          </div>
-          <span class="material-symbols-outlined text-outline group-hover:text-primary ml-auto transition-colors shrink-0">arrow_outward</span>
-        </a>
+        <div class="flex items-center gap-2">
+          <a href="mailto:mihirshelar@gmail.com" class="group flex-1 flex items-center gap-4 p-4 rounded-lg bg-surface-container-low border border-outline-variant/10 hover:border-primary/40 hover:bg-surface-container transition-all duration-300">
+            <div class="w-10 h-10 rounded-lg bg-surface-container-highest flex items-center justify-center shrink-0">
+              <span class="material-symbols-outlined text-primary text-lg">mail</span>
+            </div>
+            <div class="min-w-0">
+              <p class="text-[10px] uppercase tracking-widest text-outline mb-0.5">Email</p>
+              <p class="text-sm headline-font text-on-surface group-hover:text-primary transition-colors truncate">mihirshelar@gmail.com</p>
+            </div>
+            <span class="material-symbols-outlined text-outline group-hover:text-primary ml-auto transition-colors shrink-0">arrow_outward</span>
+          </a>
+          <button id="copy-email-btn" onclick="copyEmail()" title="Copy email address"
+            class="w-12 h-12 rounded-lg bg-surface-container-low border border-outline-variant/10 hover:border-primary/40 hover:bg-surface-container transition-all flex items-center justify-center shrink-0">
+            <span class="material-symbols-outlined text-outline hover:text-primary text-base transition-colors">content_copy</span>
+          </button>
+        </div>
 
         <a href="https://www.linkedin.com/in/mihirshelar/" target="_blank" rel="noopener noreferrer" class="group flex items-center gap-4 p-4 rounded-lg bg-surface-container-low border border-outline-variant/10 hover:border-primary/40 hover:bg-surface-container transition-all duration-300">
           <div class="w-10 h-10 rounded-lg bg-surface-container-highest flex items-center justify-center shrink-0">
@@ -934,7 +1077,7 @@
   <div class="flex flex-col md:flex-row justify-between items-center gap-6 max-w-7xl mx-auto">
     <div class="text-lg font-black text-slate-200 headline-font uppercase tracking-tighter">M.SHELAR</div>
     <p class="text-slate-400 text-xs tracking-widest uppercase text-center md:text-left">
-      &copy; 2025 Mihir Shelar · Technical Program Manager Portfolio
+      &copy; 2026 Mihir Shelar · Technical Program Manager Portfolio
     </p>
     <div class="flex gap-6 flex-wrap justify-center">
       <a href="https://www.linkedin.com/in/mihirshelar/" target="_blank" rel="noopener noreferrer" class="text-slate-500 hover:text-slate-100 transition-colors text-xs tracking-widest uppercase">LinkedIn</a>
@@ -945,5 +1088,99 @@
   </div>
 </footer>
 
+<!-- ═══════════════════════════ SCROLL TO TOP ════════════════════════ -->
+<button id="scroll-top" onclick="window.scrollTo({top:0,behavior:'smooth'})"
+  class="fixed bottom-6 right-6 z-50 w-11 h-11 rounded-full bg-surface-container-highest border border-outline-variant/30 flex items-center justify-center opacity-0 pointer-events-none transition-all duration-300 hover:bg-primary hover:border-primary hover:text-on-primary shadow-lg"
+  aria-label="Scroll to top">
+  <span class="material-symbols-outlined text-base text-on-surface-variant" id="scroll-top-icon">arrow_upward</span>
+</button>
+
+<script>
+// ── Active nav highlighting ──────────────────────────────────────────
+const sections = document.querySelectorAll('section[id]');
+const navLinks = document.querySelectorAll('nav .hidden.md\\:flex a[href^="#"]');
+const sectionObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      navLinks.forEach(l => l.classList.remove('nav-active'));
+      const active = document.querySelector(`nav .hidden.md\\:flex a[href="#${entry.target.id}"]`);
+      if (active) active.classList.add('nav-active');
+    }
+  });
+}, { threshold: 0.25, rootMargin: '-80px 0px -50% 0px' });
+sections.forEach(s => sectionObserver.observe(s));
+
+// ── Fade-in on scroll ────────────────────────────────────────────────
+const fadeObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('fade-in-visible');
+      fadeObserver.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.08 });
+document.querySelectorAll('.fade-in').forEach(el => fadeObserver.observe(el));
+
+// ── Stats count-up animation ─────────────────────────────────────────
+let statsAnimated = false;
+const statsObserver = new IntersectionObserver((entries) => {
+  if (entries[0].isIntersecting && !statsAnimated) {
+    statsAnimated = true;
+    document.querySelectorAll('[data-count]').forEach(el => {
+      const target = parseInt(el.dataset.count);
+      const prefix = el.dataset.prefix || '';
+      const suffix = el.dataset.suffix || '';
+      let current = 0;
+      const duration = 1200;
+      const steps = 50;
+      const increment = target / steps;
+      const interval = duration / steps;
+      const timer = setInterval(() => {
+        current = Math.min(current + increment, target);
+        el.textContent = prefix + Math.round(current).toLocaleString() + suffix;
+        if (current >= target) clearInterval(timer);
+      }, interval);
+    });
+  }
+}, { threshold: 0.5 });
+const statsRow = document.querySelector('[data-stats]');
+if (statsRow) statsObserver.observe(statsRow);
+
+// ── Scroll to top button visibility ──────────────────────────────────
+const scrollTopBtn = document.getElementById('scroll-top');
+const scrollTopIcon = document.getElementById('scroll-top-icon');
+window.addEventListener('scroll', () => {
+  const show = window.scrollY > 400;
+  scrollTopBtn.classList.toggle('opacity-0', !show);
+  scrollTopBtn.classList.toggle('pointer-events-none', !show);
+  scrollTopIcon.classList.toggle('text-on-primary', scrollTopBtn.matches(':hover'));
+}, { passive: true });
+
+// ── Copy email to clipboard ───────────────────────────────────────────
+function copyEmail() {
+  navigator.clipboard.writeText('mihirshelar@gmail.com').then(() => {
+    const btn = document.getElementById('copy-email-btn');
+    const icon = btn.querySelector('.material-symbols-outlined');
+    icon.textContent = 'check';
+    icon.classList.add('text-primary');
+    setTimeout(() => {
+      icon.textContent = 'content_copy';
+      icon.classList.remove('text-primary');
+    }, 2000);
+  });
+}
+
+// ── Form submit loading state ─────────────────────────────────────────
+const contactForm = document.querySelector('form[action*="formsubmit"]');
+if (contactForm) {
+  contactForm.addEventListener('submit', () => {
+    const btn = contactForm.querySelector('button[type="submit"]');
+    btn.disabled = true;
+    btn.classList.add('opacity-70', 'cursor-not-allowed');
+    btn.innerHTML = '<span class="material-symbols-outlined text-sm" style="animation:spin 1s linear infinite">progress_activity</span><span>Sending...</span>';
+  });
+}
+</script>
+<style>@keyframes spin{to{transform:rotate(360deg)}}</style>
 </body>
 </html>
